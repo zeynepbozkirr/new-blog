@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 import Card from "./Card";
 
 const BlogComponent = () => {
-    return (
-        <>
-            <Card/>
-
-        </>
-    );
+  return (
+    <>
+      <Card />
+    </>
+  );
 };
 
 export default BlogComponent;
