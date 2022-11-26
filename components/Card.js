@@ -18,10 +18,10 @@ const CardComp = () => {
                   size="small"
                   title={post.Title}
                   extra={
-                    // <button onClick={() => router.push(`/posts/${post.id}`)}>
-                    //   Click here to read more
-                    // </button>
-                    <Link href={`/posts/${post.id}`}>more</Link>
+                    <button onClick={() => router.push(`/posts/${post.id}`)}>
+                      Click here to read more
+                    </button>
+                    // <Link href={`/posts/${post.id}`}>more</Link>
                   }
                   style={{
                     width: 300,

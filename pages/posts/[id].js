@@ -8,7 +8,7 @@ const PostDetail = ({ posts }) => {
   return (
     <div>
       <Row>
-        {posts}
+        {posts.Title}
         aaa
       </Row>
     </div>
@@ -41,7 +41,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      posts: JSON.stringify(docSnap.data()) || null,
+      posts: docSnap.data(),
     },
   };
 };
