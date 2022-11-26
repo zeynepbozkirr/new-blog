@@ -1,27 +1,28 @@
 import { Button, Card, Col, Input, Row } from "antd";
-import { useCollection } from "../../Hooks/useCollection";
-import Link from "next/link";
-import { collection, doc, getDocs } from "firebase/firestore";
+
+import { collection, doc, getDocs, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 
 const PostDetail = ({ posts }) => {
-  console.log(posts, "p");
+  console.log(posts, "ppp");
   return (
     <div>
-      <Row>aaa</Row>
+      <Row>
+        {posts}
+        aaa
+      </Row>
     </div>
   );
 };
 
 export default PostDetail;
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const snapshot = await getDocs(collection(db, "Posts"));
+  console.log(snapshot, "ss");
   const paths = snapshot.docs.map((doc) => {
     return {
-      params: { id: doc.id },
+      params: { id: doc.id.toString() },
     };
   });
   console.log(paths, "ğğğ");
@@ -30,18 +31,17 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
-export async function getStaticProps(context) {
+};
+export const getStaticProps = async (context) => {
   const id = context.params.id;
 
   const docRef = doc(db, "Posts", id);
-
-  const docSnap = await getDocs(docRef);
+  const docSnap = await getDoc(docRef);
   console.log(docSnap);
 
   return {
     props: {
-      posts: "docSnap",
+      posts: JSON.stringify(docSnap.data()) || null,
     },
   };
-}
+};

@@ -11,16 +11,17 @@ const CardComp = () => {
   return (
     <div>
       <Row>
-        {!Posts?.length == 0
+        {Posts && Posts?.length !== 0
           ? Posts.map((post) => (
               <Col span={6}>
                 <Card
                   size="small"
                   title={post.Title}
                   extra={
-                    <button onClick={() => router.push(` /posts/${post.id}`)}>
-                      Click here to read more
-                    </button>
+                    // <button onClick={() => router.push(`/posts/${post.id}`)}>
+                    //   Click here to read more
+                    // </button>
+                    <Link href={`/posts/${post.id}`}>more</Link>
                   }
                   style={{
                     width: 300,
@@ -36,7 +37,6 @@ const CardComp = () => {
                   >
                     {post.Text}
                   </p>
-                  {/*<Link href=>more</Link>*/}
                 </Card>
               </Col>
             ))
@@ -47,11 +47,3 @@ const CardComp = () => {
 };
 
 export default CardComp;
-//
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       Posts,
-//     },
-//   };
-// }
