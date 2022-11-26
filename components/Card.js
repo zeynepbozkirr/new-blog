@@ -1,94 +1,57 @@
-import React from "react";
-import {
-  Box,
-  Heading,
-  Text,
-  Wrap,
-  WrapItem,
-  Flex,
-  Spacer,
-  Button,
-} from "@chakra-ui/react";
-const Card = () => {
+import React, { useEffect, useState } from "react";
+import { Button, Card, Col, Input, Row } from "antd";
+import { useCollection } from "../Hooks/useCollection";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+const CardComp = () => {
+  const { documents: Posts } = useCollection("Posts");
+  const router = useRouter();
+  const { id } = router.query;
   return (
-    <>
-      <Wrap spacing="10px">
-        <WrapItem bg="tomato">
-          <Box w="500px" h="300px" border="solid 1px " overflow="hidden">
-            <Heading>I'm a Heading</Heading>
-            <Text fontSize="lg" h="50%" overflow="hidden">
-              (lg) In love with React & Next(lg) In love with React & Next(lg)
-              In love with React & Next(lg) In love with React & Next(lg) In
-              love with React & Next(lg) In love with React & Next (lg) In love
-              with React & Next(lg) In love with React & Next (lg) In love with
-              React & Next(lg) In love with React & Next (lg) In love with React
-              & Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next
-            </Text>
-            <Button>read more</Button>
-          </Box>
-        </WrapItem>
-        <WrapItem bg="orange">
-          <Box w="500px" h="300px" border="solid 1px " overflow="hidden">
-            <Heading>I'm a Heading</Heading>
-            <Text fontSize="lg">
-              (lg) In love with React & Next(lg) In love with React & Next(lg)
-              In love with React & Next(lg) In love with React & Next(lg) In
-              love with React & Next(lg) In love with React & Next (lg) In love
-              with React & Next(lg) In love with React & Next (lg) In love with
-              React & Next(lg) In love with React & Next (lg) In love with React
-              & Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next
-            </Text>
-          </Box>
-        </WrapItem>
-        <WrapItem bg="blue">
-          <Box w="500px" h="300px" border="solid 1px " overflow="hidden">
-            <Heading>I'm a Heading</Heading>
-            <Text fontSize="lg">
-              (lg) In love with React & Next(lg) In love with React & Next(lg)
-              In love with React & Next(lg) In love with React & Next(lg) In
-              love with React & Next(lg) In love with React & Next (lg) In love
-              with React & Next(lg) In love with React & Next (lg) In love with
-              React & Next(lg) In love with React & Next (lg) In love with React
-              & Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next
-            </Text>
-          </Box>
-        </WrapItem>
-        <WrapItem bg="blue">
-          <Box w="500px" h="300px" border="solid 1px " overflow="hidden">
-            <Heading>I'm a Heading</Heading>
-            <Text fontSize="lg">
-              (lg) In love with React & Next(lg) In love with React & Next(lg)
-              In love with React & Next(lg) In love with React & Next(lg) In
-              love with React & Next(lg) In love with React & Next (lg) In love
-              with React & Next(lg) In love with React & Next (lg) In love with
-              React & Next(lg) In love with React & Next (lg) In love with React
-              & Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next (lg) In love with React &
-              Next(lg) In love with React & Next
-            </Text>
-          </Box>
-        </WrapItem>
-      </Wrap>
-    </>
+    <div>
+      <Row>
+        {!Posts?.length == 0
+          ? Posts.map((post) => (
+              <Col span={6}>
+                <Card
+                  size="small"
+                  title={post.Title}
+                  extra={
+                    <button onClick={() => router.push(` /posts/${post.id}`)}>
+                      Click here to read more
+                    </button>
+                  }
+                  style={{
+                    width: 300,
+                    height: 300,
+                    overflow: "hidden",
+                  }}
+                >
+                  <p
+                    style={{
+                      width: 300,
+                      height: 300,
+                    }}
+                  >
+                    {post.Text}
+                  </p>
+                  {/*<Link href=>more</Link>*/}
+                </Card>
+              </Col>
+            ))
+          : null}
+      </Row>
+    </div>
   );
 };
 
-export default Card;
+export default CardComp;
+//
+// export async function getStaticProps() {
+//   return {
+//     props: {
+//       Posts,
+//     },
+//   };
+// }

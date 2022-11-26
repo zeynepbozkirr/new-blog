@@ -1,10 +1,10 @@
 import React from "react";
-import Card from "./Card";
+import CardComp from "./Card";
 
 const BlogComponent = () => {
   return (
     <>
-      <Card />
+      <CardComp />
     </>
   );
 };
