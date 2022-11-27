@@ -1,47 +1,42 @@
-import { Button, Card, Col, Input, Row } from "antd";
-
-import { collection, doc, getDocs, getDoc } from "firebase/firestore";
+import { Row } from "antd";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-const PostDetail = ({ posts }) => {
-  console.log(posts, "ppp");
+const PostDetail = ({ props }) => {
+  const [postsd, setPostsd] = useState([]);
+  const router = useRouter();
+  const { id } = router.query;
+
+  const fetching = async () => {
+    console.log(db, "db");
+    console.log(id, "id");
+
+    if (router.isReady) {
+      const docRef = doc(db, "Posts", id);
+      const docSnap = await getDoc(docRef);
+      const docData = docSnap.data();
+      setPostsd(docData);
+    }
+  };
+
+  useEffect(() => {
+    fetching();
+  }, []);
+
   return (
     <div>
       <Row>
-        {posts.Title}
+        {postsd?.Date}
         aaa
       </Row>
     </div>
   );
 };
+export async function getServerSideProps(context) {
+  const { query } = context;
+  return { props: { query } };
+}
 
 export default PostDetail;
-
-export const getStaticPaths = async () => {
-  const snapshot = await getDocs(collection(db, "Posts"));
-  console.log(snapshot, "ss");
-  const paths = snapshot.docs.map((doc) => {
-    return {
-      params: { id: doc.id.toString() },
-    };
-  });
-  console.log(paths, "ğğğ");
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-export const getStaticProps = async (context) => {
-  const id = context.params.id;
-
-  const docRef = doc(db, "Posts", id);
-  const docSnap = await getDoc(docRef);
-  console.log(docSnap);
-
-  return {
-    props: {
-      posts: docSnap.data(),
-    },
-  };
-};
