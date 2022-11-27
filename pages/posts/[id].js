@@ -1,9 +1,10 @@
-import { Row } from "antd";
+import { Col, Row, Typography } from "antd";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ThreeCircles, ThreeDots } from "react-loader-spinner";
+const { Paragraph, Title, Text } = Typography;
 
 const PostDetail = ({ props }) => {
   const [postsd, setPostsd] = useState(null);
@@ -22,26 +23,43 @@ const PostDetail = ({ props }) => {
   }, []);
 
   return (
-    <div>
-      {postsd ? (
-        <div>
-          <Row>{postsd.Date}</Row>
-        </div>
-      ) : (
-        <div>
-          <ThreeDots
-            height="80"
-            width="80"
-            radius="9"
-            color="#2A3990"
-            ariaLabel="three-dots-loading"
-            wrapperStyle={{}}
-            wrapperClassName=""
-            visible={true}
-          />
-        </div>
-      )}
-    </div>
+    <>
+      <Row justify="space-around">
+        {postsd ? (
+          <Row
+            style={{
+              border: "solid 1px ",
+              marginLeft: "55px",
+              marginRight: "75px",
+            }}
+          >
+            <Col span={24}>
+              <Title style={{ textAlign: "center" }}>{postsd.Title}</Title>
+            </Col>
+            <Col span={24}>
+              <Paragraph style={{}}>{postsd.Text}</Paragraph>
+            </Col>
+            <Col span={24} style={{ textAlign: "end", color: "red" }}>
+              <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
+              <Text style={{ color: "red" }}>{postsd.Date}</Text>
+            </Col>
+          </Row>
+        ) : (
+          <Col>
+            <ThreeDots
+              height="80"
+              width="80"
+              radius="9"
+              color="#9E7676"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{}}
+              wrapperClassName=""
+              visible={true}
+            />
+          </Col>
+        )}
+      </Row>
+    </>
   );
 };
 export async function getServerSideProps(context) {
