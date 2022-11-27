@@ -12,16 +12,29 @@ const DrawerComp = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: "#FEFCF3",
+        height: "60px",
+      }}
+    >
       <MenuOutlined
         onClick={showDrawer}
-        style={{ fontSize: "26px", color: "#08c", margin: "5px" }}
+        style={{
+          height: "40px",
+          width: "80px",
+          fontSize: "26px",
+          color: "#815B5B",
+          margin: "10px",
+          marginTop: "15px",
+          marginLeft: "3px",
+        }}
       />
 
       <Drawer placement="left" onClose={onClose} open={open}>
         xkgjf
       </Drawer>
-    </>
+    </div>
   );
 };
 
