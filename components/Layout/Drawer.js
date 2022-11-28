@@ -1,14 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
+import SearchInput from "./searchInput";
+import { useCollection } from "../../Hooks/useCollection";
+import searchInput from "./searchInput";
+import ListComp from "./listComp";
 
 const DrawerComp = () => {
+  const { documents: Posts } = useCollection("Posts");
+  const [searchData, setSearchData] = useState(null);
+
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(true);
   };
   const onClose = () => {
     setOpen(false);
+  };
+
+  // useEffect(() => {
+  //   setSearchData(Posts);
+  // }, [Posts]);
+
+  const searchHandleChange = async (e) => {
+    console.log("ss");
+    const filterSearchData = Posts?.filter(
+      (post) => post.Title.includes(e.toLocaleLowerCase())
+      // || post.Category.includes(e.toLocaleLowerCase())
+    );
+    setSearchData(filterSearchData);
   };
 
   return (
@@ -31,8 +51,18 @@ const DrawerComp = () => {
         }}
       />
 
-      <Drawer placement="left" onClose={onClose} open={open}>
-        xkgjf
+      <Drawer
+        closable={false}
+        title={
+          <SearchInput
+            searchHandleChange={(e) => searchHandleChange(e)}
+          ></SearchInput>
+        }
+        placement="left"
+        onClose={onClose}
+        open={open}
+      >
+        <ListComp Posts={Posts} searchData={searchData}></ListComp>
       </Drawer>
     </div>
   );

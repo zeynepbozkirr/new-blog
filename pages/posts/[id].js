@@ -28,9 +28,7 @@ const PostDetail = ({ props }) => {
         {postsd ? (
           <Row
             style={{
-              border: "solid 1px ",
-              marginLeft: "55px",
-              marginRight: "75px",
+              margin: "0 75px 0 60px",
             }}
           >
             <Col span={24}>
@@ -39,7 +37,10 @@ const PostDetail = ({ props }) => {
             <Col span={24}>
               <Paragraph style={{}}>{postsd.Text}</Paragraph>
             </Col>
-            <Col span={24} style={{ textAlign: "end", color: "red" }}>
+            <Col
+              span={24}
+              style={{ textAlign: "end", color: "red", marginTop: "30px" }}
+            >
               <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
               <Text style={{ color: "red" }}>{postsd.Date}</Text>
             </Col>
