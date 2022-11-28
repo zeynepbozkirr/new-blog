@@ -8,7 +8,7 @@ import ListComp from "./listComp";
 
 const DrawerComp = () => {
   const { documents: Posts } = useCollection("Posts");
-  const [searchData, setSearchData] = useState(null);
+  const [searchData, setSearchData] = useState("");
 
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
@@ -17,18 +17,20 @@ const DrawerComp = () => {
   const onClose = () => {
     setOpen(false);
   };
-
+  //
   // useEffect(() => {
   //   setSearchData(Posts);
   // }, [Posts]);
 
   const searchHandleChange = async (e) => {
-    console.log("ss");
-    const filterSearchData = Posts?.filter(
-      (post) => post.Title.includes(e.toLocaleLowerCase())
-      // || post.Category.includes(e.toLocaleLowerCase())
-    );
-    setSearchData(filterSearchData);
+    if (e !== "") {
+      const filterSearchData = Posts?.filter((post) =>
+        post.Title.includes(e.toLocaleLowerCase())
+      );
+      setSearchData(filterSearchData);
+    } else {
+      setSearchData("");
+    }
   };
 
   return (
@@ -62,7 +64,11 @@ const DrawerComp = () => {
         onClose={onClose}
         open={open}
       >
-        <ListComp Posts={Posts} searchData={searchData}></ListComp>
+        <ListComp
+          Posts={Posts}
+          searchData={searchData}
+          setSearchData={(x) => setSearchData(x)}
+        ></ListComp>
       </Drawer>
     </div>
   );
