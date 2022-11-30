@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Col, Input, Row } from "antd";
+import { Card, Col, Row } from "antd";
 import { useCollection } from "../Hooks/useCollection";
 import Link from "next/link";
 import { Typography } from "antd";
 import { ThreeDots } from "react-loader-spinner";
 import { ArrowRightOutlined } from "@ant-design/icons";
-const { Paragraph, Title, Text } = Typography;
+const { Paragraph, Text } = Typography;
 
 const CardComp = () => {
-  const { documents: Posts } = useCollection("Posts");
+  const { documents: Posts } = useCollection("posts");
+  console.log(Posts, "pp");
 
   return (
     <>
@@ -27,7 +28,7 @@ const CardComp = () => {
                         expandable: false,
                       }}
                     >
-                      {post.Title}
+                      {post.title}
                     </Text>
                   }
                   style={{
@@ -41,10 +42,9 @@ const CardComp = () => {
                     ellipsis={{
                       rows: 8,
                       expandable: false,
-                      // symbol: "more",
                     }}
                   >
-                    {post.Text}
+                    {post.postContent}
                   </Paragraph>
                   <Link
                     style={{

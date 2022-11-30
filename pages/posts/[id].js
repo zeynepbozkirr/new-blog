@@ -3,46 +3,46 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { ThreeCircles, ThreeDots } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 const { Paragraph, Title, Text } = Typography;
 
 const PostDetail = ({ props }) => {
-  const [postsd, setPostsd] = useState(null);
+  const [posts, setPosts] = useState(null);
   const router = useRouter();
   const { id } = router.query;
 
   const fetching = async () => {
-    const docRef = doc(db, "Posts", id);
+    const docRef = doc(db, "posts", id);
     const docSnap = await getDoc(docRef);
     const docData = docSnap.data();
-    setPostsd(docData);
+    setPosts(docData);
   };
 
   useEffect(() => {
     fetching();
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Row justify="space-around">
-        {postsd ? (
+        {posts ? (
           <Row
             style={{
               margin: "0 75px 0 60px",
             }}
           >
             <Col span={24}>
-              <Title style={{ textAlign: "center" }}>{postsd.Title}</Title>
+              <Title style={{ textAlign: "center" }}>{posts.title}</Title>
             </Col>
             <Col span={24}>
-              <Paragraph style={{}}>{postsd.Text}</Paragraph>
+              <Paragraph style={{}}>{posts.postContent}</Paragraph>
             </Col>
             <Col
               span={24}
               style={{ textAlign: "end", color: "red", marginTop: "30px" }}
             >
               <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
-              <Text style={{ color: "red" }}>{postsd.Date}</Text>
+              {/*<Text style={{ color: "red" }}>{posts.date}</Text>*/}
             </Col>
           </Row>
         ) : (

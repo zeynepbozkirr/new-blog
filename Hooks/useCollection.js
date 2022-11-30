@@ -8,7 +8,7 @@ export const useCollection = (c) => {
   useEffect(() => {
     let ref = collection(db, c);
 
-    const q = query(ref, orderBy("Date", "desc"));
+    const q = query(ref, orderBy("date", "desc"));
     const unsub = onSnapshot(q, (snapshot) => {
       setDocuments(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     });

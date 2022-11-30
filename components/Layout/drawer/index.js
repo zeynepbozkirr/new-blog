@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import SearchInput from "./searchInput";
-import { useCollection } from "../../Hooks/useCollection";
-import searchInput from "./searchInput";
-import ListComp from "./listComp";
+import { useCollection } from "../../../Hooks/useCollection";
+import ListComp from "./listSearch";
 
 const DrawerComp = () => {
-  const { documents: Posts } = useCollection("Posts");
+  const { documents: Posts } = useCollection("posts");
   const [searchData, setSearchData] = useState("");
 
   const [open, setOpen] = useState(false);
@@ -17,15 +16,11 @@ const DrawerComp = () => {
   const onClose = () => {
     setOpen(false);
   };
-  //
-  // useEffect(() => {
-  //   setSearchData(Posts);
-  // }, [Posts]);
 
   const searchHandleChange = async (e) => {
     if (e !== "") {
       const filterSearchData = Posts?.filter((post) =>
-        post.Title.includes(e.toLocaleLowerCase())
+        post.title.includes(e.toLocaleLowerCase())
       );
       setSearchData(filterSearchData);
     } else {
