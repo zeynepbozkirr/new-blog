@@ -31,7 +31,7 @@ const DrawerComp = () => {
   return (
     <div
       style={{
-        backgroundColor: "#FEFCF3",
+        // backgroundColor: "red",
         height: "60px",
       }}
     >
@@ -49,6 +49,7 @@ const DrawerComp = () => {
       />
 
       <Drawer
+        // style={{ background: "red", height: "550px" }}
         closable={false}
         title={
           <SearchInput
