@@ -4,6 +4,8 @@ import { db } from "../../firebase/config";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ThreeDots } from "react-loader-spinner";
+import BlogComponent from "../../components";
+import Drawer from "../../components/Drawer";
 const { Paragraph, Title, Text } = Typography;
 
 const PostDetail = ({ props }) => {
@@ -31,18 +33,19 @@ const PostDetail = ({ props }) => {
               margin: "0 75px 0 60px",
             }}
           >
-            <Col span={24}>
-              <Title style={{ textAlign: "center" }}>{posts.title}</Title>
+            <Col md={14} xs={14} offset={1}>
+              <Title>{posts.title}</Title>
             </Col>
-            <Col span={24}>
+            <Col md={14} xs={14} offset={1}>
               <Paragraph style={{}}>{posts.postContent}</Paragraph>
             </Col>
             <Col
-              span={24}
+              md={14}
+              xs={14}
+              offset={1}
               style={{ textAlign: "end", color: "red", marginTop: "30px" }}
             >
               <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
-              {/*<Text style={{ color: "red" }}>{posts.date}</Text>*/}
             </Col>
           </Row>
         ) : (

@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Row>
-        <Col span={13} offset={1}>
+        <Col md={14} xs={14} offset={1}>
           <BlogComponent />
         </Col>
-        <Col span={8} offset={2}>
+        <Col md={6} xs={24} offset={2}>
           <Drawer />
         </Col>
       </Row>

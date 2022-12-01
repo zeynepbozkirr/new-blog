@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Typography } from "antd";
 import { ThreeDots } from "react-loader-spinner";
 import { ArrowRightOutlined } from "@ant-design/icons";
-const { Paragraph, Text } = Typography;
+const { Paragraph, Text, Title } = Typography;
 
 const CardComp = () => {
   const { documents: Posts } = useCollection("posts");
@@ -18,7 +18,7 @@ const CardComp = () => {
           <Row>
             <Col span={24}>
               <div style={{ marginTop: "50px" }}>
-                <Text
+                <Title
                   length="5"
                   ellipsis={{
                     rows: 1,
@@ -26,10 +26,10 @@ const CardComp = () => {
                   }}
                 >
                   {post.title}
-                </Text>
+                </Title>
                 <Paragraph
                   ellipsis={{
-                    rows: 8,
+                    rows: 4,
                     expandable: false,
                   }}
                 >
@@ -39,18 +39,20 @@ const CardComp = () => {
                 <Link
                   style={{
                     display: "flex",
-                    justifyContent: "end",
+                    // justifyContent: "end",
                     color: "#9E7676",
                   }}
                   href={`/posts/${post.id}`}
                 >
-                  <ArrowRightOutlined
-                    style={{
-                      width: "50px",
-                      height: "30px",
-                    }}
-                  />
+                  {/*<ArrowRightOutlined*/}
+                  {/*  style={{*/}
+                  {/*    width: "50px",*/}
+                  {/*    height: "30px",*/}
+                  {/*  }}*/}
+                  {/*/>*/}
+                  Read More
                 </Link>
+                <hr />
               </div>
             </Col>
           </Row>
