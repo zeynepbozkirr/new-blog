@@ -3,7 +3,7 @@ import { Input } from "antd";
 
 const SearchInput = ({ searchHandleChange }) => {
   return (
-    <div>
+    <div style={{ marginBottom: "50px" }}>
       <Input onChange={(e) => searchHandleChange(e.target.value)}></Input>
     </div>
   );

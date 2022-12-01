@@ -1,12 +1,12 @@
 import React from "react";
-import Drawer from "./drawer";
+import Navbar from "./navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Drawer />
+    <>
+      <Navbar />
       <main>{children}</main>
-    </div>
+    </>
   );
 };
 

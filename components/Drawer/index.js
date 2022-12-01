@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import SearchInput from "./searchInput";
-import { useCollection } from "../../../Hooks/useCollection";
+import { useCollection } from "../../Hooks/useCollection";
 import ListComp from "./listSearch";
 
 const DrawerComp = () => {
@@ -32,40 +32,33 @@ const DrawerComp = () => {
     <div
       style={{
         // backgroundColor: "red",
+        marginTop: "50px",
         height: "60px",
       }}
     >
-      <MenuOutlined
-        onClick={showDrawer}
-        style={{
-          height: "40px",
-          width: "80px",
-          fontSize: "26px",
-          color: "#815B5B",
-          margin: "10px",
-          marginTop: "15px",
-          marginLeft: "3px",
-        }}
-      />
+      {/*<MenuOutlined*/}
+      {/*  onClick={showDrawer}*/}
+      {/*  style={{*/}
+      {/*    height: "40px",*/}
+      {/*    width: "80px",*/}
+      {/*    fontSize: "26px",*/}
+      {/*    color: "#815B5B",*/}
+      {/*    margin: "10px",*/}
+      {/*    marginTop: "15px",*/}
+      {/*    marginLeft: "3px",*/}
+      {/*  }}*/}
+      {/*/>*/}
 
-      <Drawer
-        // style={{ background: "red", height: "550px" }}
-        closable={false}
-        title={
-          <SearchInput
-            searchHandleChange={(e) => searchHandleChange(e)}
-          ></SearchInput>
-        }
-        placement="left"
-        onClose={onClose}
-        open={open}
-      >
-        <ListComp
-          Posts={Posts}
-          searchData={searchData}
-          setSearchData={(x) => setSearchData(x)}
-        ></ListComp>
-      </Drawer>
+      <SearchInput
+        style={{}}
+        searchHandleChange={(e) => searchHandleChange(e)}
+      ></SearchInput>
+
+      <ListComp
+        Posts={Posts}
+        searchData={searchData}
+        setSearchData={(x) => setSearchData(x)}
+      ></ListComp>
     </div>
   );
 };

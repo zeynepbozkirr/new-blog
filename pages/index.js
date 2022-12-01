@@ -1,20 +1,19 @@
 import styles from "../styles/Home.module.css";
 import BlogComponent from "../components";
-import Drawer from "../components/Layout/drawer";
-import { motion, useScroll } from "framer-motion";
+import Drawer from "../components/Drawer";
+import { Col, Row } from "antd";
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-
   return (
     <div className={styles.container}>
-      <motion.div
-        className={styles.progress}
-        style={{
-          scaleX: scrollYProgress,
-        }}
-      />
-      <BlogComponent />
+      <Row>
+        <Col span={13} offset={1}>
+          <BlogComponent />
+        </Col>
+        <Col span={8} offset={2}>
+          <Drawer />
+        </Col>
+      </Row>
     </div>
   );
 }
