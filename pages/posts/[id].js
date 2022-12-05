@@ -4,8 +4,7 @@ import { db } from "../../firebase/config";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ThreeDots } from "react-loader-spinner";
-import BlogComponent from "../../components";
-import Drawer from "../../components/Drawer";
+
 const { Paragraph, Title, Text } = Typography;
 
 const PostDetail = ({ props }) => {

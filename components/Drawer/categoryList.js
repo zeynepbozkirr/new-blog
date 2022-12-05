@@ -1,20 +1,18 @@
-import React, { useEffect } from "react";
-import { Card, Col, Row, Typography } from "antd";
+import React from "react";
+import { Button, Card, Col, Row, Typography } from "antd";
 import Link from "next/link";
 import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
 
-const ListSearchData = ({ searchData, Posts, setSearchData }) => {
-  const { Paragraph, Title, Text } = Typography;
+const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
+  const { Paragraph } = Typography;
 
-  // useEffect(() => {
-  //   if (!searchData) {
-  //     setSearchData("");
-  //   }
-  // }, []);
-  console.log(searchData);
-  const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-
+  const onClickCategory = (categ) => {
+    const filterCategory = Posts?.filter((post) =>
+      post.category.includes(categ.toLocaleLowerCase())
+    );
+    setFilterCategory(filterCategory);
+  };
   return (
     <div>
       <Row>
@@ -26,9 +24,7 @@ const ListSearchData = ({ searchData, Posts, setSearchData }) => {
                   <Bounce top>
                     <Paragraph
                       style={{
-                        border: `1px solid ${
-                          colors[Math.floor(Math.random() * colors.length)]
-                        }`,
+                        border: `1px solid #9C1AFF`,
                         borderRadius: "10px",
                         width: "250px",
                         paddingLeft: "5px",
@@ -53,9 +49,7 @@ const ListSearchData = ({ searchData, Posts, setSearchData }) => {
                   {pos.category?.map((categ) => (
                     <Paragraph
                       style={{
-                        border: `1px solid ${
-                          colors[Math.floor(Math.random() * colors.length)]
-                        }`,
+                        border: `1px solid #9C1AFF`,
                         borderRadius: "10px",
                         width: "250px",
                         paddingLeft: "5px",
@@ -65,8 +59,9 @@ const ListSearchData = ({ searchData, Posts, setSearchData }) => {
                         expandable: false,
                       }}
                     >
-                      {" "}
-                      {categ}{" "}
+                      <Button onClick={() => onClickCategory(categ)}>
+                        {categ}{" "}
+                      </Button>
                     </Paragraph>
                   ))}
                 </Paragraph>
@@ -79,4 +74,4 @@ const ListSearchData = ({ searchData, Posts, setSearchData }) => {
   );
 };
 
-export default ListSearchData;
+export default CategoryList;

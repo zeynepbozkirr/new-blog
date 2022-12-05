@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Image, Row } from "antd";
 import image from "../../public/logo.png";
 import Link from "next/link";
-import ListSearch from "../Drawer/listSearch";
+import ListSearch from "../Drawer/categoryList";
 
 const Navbar = () => {
   return (

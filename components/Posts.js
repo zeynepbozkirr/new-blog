@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Row } from "antd";
+import { Button, Card, Col, Row } from "antd";
 import { useCollection } from "../Hooks/useCollection";
 import Link from "next/link";
 import { Typography } from "antd";
 import { ThreeDots } from "react-loader-spinner";
-import { ArrowRightOutlined } from "@ant-design/icons";
 const { Paragraph, Text, Title } = Typography;
+import styles from "./components.module.css";
 
-const CardComp = () => {
+const Posts = ({ filterCategory, setFilterCategory }) => {
   const { documents: Posts } = useCollection("posts");
-  console.log(Posts, "pp");
+  useEffect(() => {
+    setFilterCategory(Posts);
+  }, [Posts]);
 
+  console.log(filterCategory, "gfgf");
   return (
     <>
-      {Posts ? (
-        Posts.map((post) => (
+      {filterCategory ? (
+        filterCategory.map((post) => (
           <Row>
             <Col span={24}>
               <div style={{ marginTop: "50px" }}>
@@ -27,30 +30,26 @@ const CardComp = () => {
                 >
                   {post.title}
                 </Title>
+                <Text>{post.category[0]}</Text> -
+                <Text>{post.date.toLocaleString()}</Text> -
+                <Text>615 okunma</Text>
                 <Paragraph
                   ellipsis={{
                     rows: 4,
                     expandable: false,
                   }}
+                  style={{ marginTop: "10px" }}
                 >
                   {post.postContent}
                 </Paragraph>
-
                 <Link
                   style={{
                     display: "flex",
-                    // justifyContent: "end",
                     color: "#9E7676",
                   }}
                   href={`/posts/${post.id}`}
                 >
-                  {/*<ArrowRightOutlined*/}
-                  {/*  style={{*/}
-                  {/*    width: "50px",*/}
-                  {/*    height: "30px",*/}
-                  {/*  }}*/}
-                  {/*/>*/}
-                  Read More
+                  <Button className={styles.button}>Read More {`>>`} </Button>
                 </Link>
                 <hr />
               </div>
@@ -73,4 +72,4 @@ const CardComp = () => {
   );
 };
 
-export default CardComp;
+export default Posts;

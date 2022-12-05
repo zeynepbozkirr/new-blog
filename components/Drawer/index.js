@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Drawer } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
 import SearchInput from "./searchInput";
 import { useCollection } from "../../Hooks/useCollection";
-import ListComp from "./listSearch";
+import CategoryList from "./categoryList";
 
-const DrawerComp = () => {
+const DrawerComp = ({ filterCategory, setFilterCategory }) => {
   const { documents: Posts } = useCollection("posts");
   const [searchData, setSearchData] = useState("");
-
-  const [open, setOpen] = useState(false);
-  const showDrawer = () => {
-    setOpen(true);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
 
   const searchHandleChange = async (e) => {
     if (e !== "") {
@@ -31,34 +21,22 @@ const DrawerComp = () => {
   return (
     <div
       style={{
-        // backgroundColor: "red",
         marginTop: "50px",
         height: "60px",
       }}
     >
-      {/*<MenuOutlined*/}
-      {/*  onClick={showDrawer}*/}
-      {/*  style={{*/}
-      {/*    height: "40px",*/}
-      {/*    width: "80px",*/}
-      {/*    fontSize: "26px",*/}
-      {/*    color: "#815B5B",*/}
-      {/*    margin: "10px",*/}
-      {/*    marginTop: "15px",*/}
-      {/*    marginLeft: "3px",*/}
-      {/*  }}*/}
-      {/*/>*/}
-
       <SearchInput
         style={{}}
         searchHandleChange={(e) => searchHandleChange(e)}
       ></SearchInput>
 
-      <ListComp
+      <CategoryList
+        filterCategory={filterCategory}
+        setFilterCategory={(x) => setFilterCategory(x)}
         Posts={Posts}
         searchData={searchData}
         setSearchData={(x) => setSearchData(x)}
-      ></ListComp>
+      ></CategoryList>
     </div>
   );
 };
