@@ -26,7 +26,7 @@ const PostDetail = ({ props }) => {
 
   return (
     <>
-      <Row>
+      <Row justify="center">
         <Col md={14} xs={14} offset={1} style={{ marginTop: "50px" }}>
           {posts ? (
             <Row

@@ -19,70 +19,55 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
 
   console.log(filterCategory, "gfgf");
   return (
-    <Row justify="center">
-      {filterCategory ? (
-        filterCategory.map((post) => (
-          <Row>
-            <Col span={24}>
-              <div style={{ marginTop: "50px" }}>
-                <Title
-                  length="5"
-                  ellipsis={{
-                    rows: 1,
-                    expandable: false,
-                  }}
-                >
-                  {post.title}
-                </Title>
+    <Row>
+      {filterCategory?.map((post) => (
+        <Row>
+          <Col span={24}>
+            <div style={{ marginTop: "50px" }}>
+              <Title
+                length="5"
+                ellipsis={{
+                  rows: 1,
+                  expandable: false,
+                }}
+              >
+                {post.title}
+              </Title>
 
-                <Text>{post.date}</Text>
-                <Text style={{ color: "#989da2" }}>
-                  &nbsp; - &nbsp; <ReadOutlined style={{ color: "#FAAB78" }} />{" "}
-                  615 okunma
-                </Text>
-                <br />
-                <Text style={{ color: "purple" }}>
-                  {post.category[0]} - {post.category[1]}
-                </Text>
-                <Paragraph
-                  ellipsis={{
-                    rows: 4,
-                    expandable: false,
-                  }}
-                  style={{ marginTop: "10px" }}
-                >
-                  {post.postContent}
-                </Paragraph>
-                <Link
-                  style={{
-                    display: "flex",
-                    color: "#9E7676",
-                  }}
-                  href={`/posts/${post.id}`}
-                >
-                  <Button className={styles.button}>
-                    <Text className={styles.buttonText}>Read More {`>>`}</Text>
-                  </Button>
-                </Link>
-                <hr />
-              </div>
-            </Col>
-          </Row>
-        ))
-      ) : (
-        <Col>
-          <ThreeDots
-            height="80"
-            width="80"
-            radius="9"
-            color="#9E7676"
-            ariaLabel="three-dots-loading"
-            wrapperStyle={{}}
-            wrapperClassName=""
-            visible={true}
-          />{" "}
-        </Col>
-      )}
+              <Text>{post.date}</Text>
+              <Text style={{ color: "#989da2" }}>
+                &nbsp; - &nbsp; <ReadOutlined style={{ color: "#FAAB78" }} />{" "}
+                615 okunma
+              </Text>
+              <br />
+              <Text style={{ color: "purple" }}>
+                {post.category[0]} - {post.category[1]}
+              </Text>
+              <Paragraph
+                ellipsis={{
+                  rows: 4,
+                  expandable: false,
+                }}
+                style={{ marginTop: "10px" }}
+              >
+                {post.postContent}
+              </Paragraph>
+              <Link
+                style={{
+                  display: "flex",
+                  color: "#9E7676",
+                }}
+                href={`/posts/${post.id}`}
+              >
+                <Button className={styles.button}>
+                  <Text className={styles.buttonText}>Read More {`>>`}</Text>
+                </Button>
+              </Link>
+              <hr />
+            </div>
+          </Col>
+        </Row>
+      ))}
     </Row>
   );
 };
