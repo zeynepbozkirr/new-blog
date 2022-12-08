@@ -4,6 +4,7 @@ import { db } from "../../firebase/config";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ThreeDots } from "react-loader-spinner";
+import Drawer from "../../components/Drawer";
 
 const { Paragraph, Title, Text } = Typography;
 
@@ -25,42 +26,44 @@ const PostDetail = ({ props }) => {
 
   return (
     <>
-      <Row justify="space-around">
-        {posts ? (
-          <Row
-            style={{
-              margin: "0 75px 0 60px",
-            }}
-          >
-            <Col md={14} xs={14} offset={1}>
-              <Title>{posts.title}</Title>
-            </Col>
-            <Col md={14} xs={14} offset={1}>
-              <Paragraph style={{}}>{posts.postContent}</Paragraph>
-            </Col>
-            <Col
-              md={14}
-              xs={14}
-              offset={1}
-              style={{ textAlign: "end", color: "red", marginTop: "30px" }}
+      <Row>
+        <Col md={14} xs={14} offset={1} style={{ marginTop: "50px" }}>
+          {posts ? (
+            <Row
+            // style={{
+            //   margin: "0 75px 0 60px",
+            // }}
             >
-              <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
+              <Col>
+                <Title>{posts.title}</Title>
+              </Col>
+              <Col>
+                <Paragraph style={{}}>{posts.postContent}</Paragraph>
+              </Col>
+              <Col
+                style={{ textAlign: "end", color: "red", marginTop: "30px" }}
+              >
+                <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
+              </Col>
+            </Row>
+          ) : (
+            <Col>
+              <ThreeDots
+                height="80"
+                width="80"
+                radius="9"
+                color="#9E7676"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              />
             </Col>
-          </Row>
-        ) : (
-          <Col>
-            <ThreeDots
-              height="80"
-              width="80"
-              radius="9"
-              color="#9E7676"
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{}}
-              wrapperClassName=""
-              visible={true}
-            />
-          </Col>
-        )}
+          )}
+        </Col>
+        <Col md={6} xs={24} offset={2}>
+          <Drawer />
+        </Col>
       </Row>
     </>
   );

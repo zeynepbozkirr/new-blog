@@ -6,6 +6,7 @@ import { Typography } from "antd";
 import { ThreeDots } from "react-loader-spinner";
 const { Paragraph, Text, Title } = Typography;
 import styles from "./components.module.css";
+import { ReadOutlined } from "@ant-design/icons";
 
 const Posts = ({ filterCategory, setFilterCategory }) => {
   const { documents: Posts } = useCollection("posts");
@@ -13,9 +14,12 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     setFilterCategory(Posts);
   }, [Posts]);
 
+  const d = new Date();
+  console.log(d, "date");
+
   console.log(filterCategory, "gfgf");
   return (
-    <>
+    <Row justify="center">
       {filterCategory ? (
         filterCategory.map((post) => (
           <Row>
@@ -30,9 +34,16 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 >
                   {post.title}
                 </Title>
-                <Text>{post.category[0]}</Text> -
-                <Text>{post.date.toLocaleString()}</Text> -
-                <Text>615 okunma</Text>
+
+                <Text>{post.date}</Text>
+                <Text style={{ color: "#989da2" }}>
+                  &nbsp; - &nbsp; <ReadOutlined style={{ color: "#FAAB78" }} />{" "}
+                  615 okunma
+                </Text>
+                <br />
+                <Text style={{ color: "purple" }}>
+                  {post.category[0]} - {post.category[1]}
+                </Text>
                 <Paragraph
                   ellipsis={{
                     rows: 4,
@@ -49,7 +60,9 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                   }}
                   href={`/posts/${post.id}`}
                 >
-                  <Button className={styles.button}>Read More {`>>`} </Button>
+                  <Button className={styles.button}>
+                    <Text className={styles.buttonText}>Read More {`>>`}</Text>
+                  </Button>
                 </Link>
                 <hr />
               </div>
@@ -57,18 +70,20 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
           </Row>
         ))
       ) : (
-        <ThreeDots
-          height="80"
-          width="80"
-          radius="9"
-          color="#9E7676"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName=""
-          visible={true}
-        />
+        <Col>
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#9E7676"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />{" "}
+        </Col>
       )}
-    </>
+    </Row>
   );
 };
 

@@ -1,12 +1,31 @@
 .button{
-    margin:10px;
+    background-color: #BA94D1;
+    margin-top:10px;
+    margin-bottom:10px;
     font-size: 14px;
-    height: 35px;
-    width: 150px;
+    height: 40px;
+    width: 170px;
 
 }
 .button:hover{
     color: #9C1AFF !important;
-    border-color:  #9C1AFF !important;
+    border-color:  #BA94D1 !important;
+
+}
+
+.buttonText {
+    font-weight: bold;
+    color: white;
+}
+
+.categoryParagraph{
+
+}
+.categoryButton{
+    border: 1px solid ;
+    borderRadius: 10px;
+    width: 200px;
+    height: 35px;
+    paddingLeft: 5px
 
 }
