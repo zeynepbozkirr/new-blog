@@ -1,38 +1,13 @@
-import styles from "../styles/Home.module.css";
 import Drawer from "../components/Drawer";
-import { Col, Pagination, Row } from "antd";
+import { Col, Row } from "antd";
 import Posts from "../components/Posts";
 import { useCollection } from "../Hooks/useCollection";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import ReactPaginate from "react-paginate";
 
 export default function Home() {
   const { documents: AllPosts } = useCollection("posts");
   const [filterCategory, setFilterCategory] = useState();
-
-  // const displayUsers = AllPosts?.slice(
-  //   pagesVisited,
-  //   pagesVisited + usersPerPage
-  // ).map((user) => {
-  //   return (
-  //     <Row justify="center">
-  //       <Col md={14} xs={14} offset={1}>
-  //         <Posts
-  //           user={user}
-  //           filterCategory={filterCategory}
-  //           setFilterCategory={(x) => setFilterCategory(x)}
-  //         />
-  //       </Col>
-  //       <Col md={6} xs={24} offset={2}>
-  //         <Drawer
-  //           filterCategory={filterCategory}
-  //           setFilterCategory={(x) => setFilterCategory(x)}
-  //         />
-  //       </Col>
-  //     </Row>
-  //   );
-  // });
 
   return (
     <div className="App">
@@ -67,17 +42,6 @@ export default function Home() {
           </Col>
         </Row>
       )}
-      {/*<ReactPaginate*/}
-      {/*  previousLabel={"Previous"}*/}
-      {/*  nextLabel={"Next"}*/}
-      {/*  pageCount={pageCount}*/}
-      {/*  onPageChange={changePage}*/}
-      {/*  containerClassName={"paginationBttns"}*/}
-      {/*  previousLinkClassName={"previousBttn"}*/}
-      {/*  nextLinkClassName={"nextBttn"}*/}
-      {/*  disabledClassName={"paginationDisabled"}*/}
-      {/*  activeClassName={"paginationActive"}*/}
-      {/*/>*/}
     </div>
   );
 }

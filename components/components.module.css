@@ -22,10 +22,17 @@
 
 }
 .categoryButton{
-    border: 1px solid ;
+    color: #9C1AFF;
+    border: 1px solid  #BA94D1;
     borderRadius: 10px;
     width: 200px;
     height: 35px;
     paddingLeft: 5px
+
+}
+.categoryButton:hover{
+    color: white !important;
+    background-color: #BA94D1 !important;
+    border-color:  #BA94D1 !important;
 
 }
