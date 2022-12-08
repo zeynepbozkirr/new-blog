@@ -24,12 +24,44 @@ a {
     background: black;
   }
 }
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background: var(--red);
-  transform-origin: 0%;
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+
+
+.paginationBttns {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  /*color: #2b2eff;*/
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: #FFFFFF;
+  background-color: #BA94D1;
+}
+
+.paginationActive a {
+  color: #FFFFFF;
+  background-color:#BA94D1;
+;
+}
+
+.paginationDisabled a {
+  /*color: grey;*/
+  /*background-color: grey;*/
 }

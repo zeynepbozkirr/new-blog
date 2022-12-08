@@ -7,6 +7,8 @@ import { ThreeDots } from "react-loader-spinner";
 const { Paragraph, Text, Title } = Typography;
 import styles from "./components.module.css";
 import { ReadOutlined } from "@ant-design/icons";
+import Drawer from "./Drawer";
+import ReactPaginate from "react-paginate";
 
 const Posts = ({ filterCategory, setFilterCategory }) => {
   const { documents: Posts } = useCollection("posts");
@@ -14,13 +16,20 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     setFilterCategory(Posts);
   }, [Posts]);
 
-  const d = new Date();
-  console.log(d, "date");
+  const [pageNumber, setPageNumber] = useState(0);
 
-  console.log(filterCategory, "gfgf");
-  return (
-    <Row>
-      {filterCategory?.map((post) => (
+  const usersPerPage = 3;
+  const pagesVisited = pageNumber * usersPerPage;
+
+  const pageCount = Math.ceil(Posts?.length / usersPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+  const displayUsers = filterCategory
+    ?.slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((post) => {
+      return (
         <Row>
           <Col span={24}>
             <div style={{ marginTop: "50px" }}>
@@ -67,7 +76,25 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
             </div>
           </Col>
         </Row>
-      ))}
+      );
+    });
+
+  return (
+    <Row>
+      <div className="App">
+        {displayUsers}
+        <ReactPaginate
+          previousLabel={"Previous"}
+          nextLabel={"Next"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+        />
+      </div>
     </Row>
   );
 };

@@ -26,45 +26,39 @@ const PostDetail = ({ props }) => {
 
   return (
     <>
-      <Row justify="center">
-        <Col md={14} xs={14} offset={1} style={{ marginTop: "50px" }}>
-          {posts ? (
-            <Row
-            // style={{
-            //   margin: "0 75px 0 60px",
-            // }}
-            >
-              <Col>
-                <Title>{posts.title}</Title>
-              </Col>
-              <Col>
-                <Paragraph style={{}}>{posts.postContent}</Paragraph>
-              </Col>
-              <Col
-                style={{ textAlign: "end", color: "red", marginTop: "30px" }}
-              >
-                <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
-              </Col>
-            </Row>
-          ) : (
+      {posts ? (
+        <Row justify="center">
+          <Col md={14} xs={14} offset={1} style={{ marginTop: "50px" }}>
             <Col>
-              <ThreeDots
-                height="80"
-                width="80"
-                radius="9"
-                color="#9E7676"
-                ariaLabel="three-dots-loading"
-                wrapperStyle={{}}
-                wrapperClassName=""
-                visible={true}
-              />
+              <Title>{posts.title}</Title>
             </Col>
-          )}
-        </Col>
-        <Col md={6} xs={24} offset={2}>
-          <Drawer />
-        </Col>
-      </Row>
+            <Col>
+              <Paragraph style={{}}>{posts.postContent}</Paragraph>
+            </Col>
+            <Col style={{ textAlign: "end", color: "red", marginTop: "30px" }}>
+              <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
+            </Col>
+          </Col>
+          <Col md={6} xs={24} offset={2}>
+            <Drawer />
+          </Col>
+        </Row>
+      ) : (
+        <Row justify="center">
+          <Col>
+            <ThreeDots
+              height="80"
+              width="80"
+              radius="9"
+              color="#9E7676"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{}}
+              wrapperClassName=""
+              visible={true}
+            />
+          </Col>
+        </Row>
+      )}
     </>
   );
 };
