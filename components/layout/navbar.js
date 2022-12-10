@@ -11,6 +11,7 @@ const Navbar = () => {
         <Link href="/">
           <Image width="80px" src="./logo.png" preview={false} />
         </Link>
+        <Link href="/About">About</Link>
       </Col>
     </Row>
   );
