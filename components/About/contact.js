@@ -3,32 +3,17 @@ import { Card, Typography } from "antd";
 import styles from "../components.module.css";
 const { Paragraph, Text, Title } = Typography;
 import { Helmet } from "react-helmet";
-import {
-  ShareAltOutlined,
-  GithubOutlined,
-  LinkedinOutlined,
-  TwitterOutlined,
-  MailOutlined,
-} from "@ant-design/icons";
+import { ShareAltOutlined } from "@ant-design/icons";
 import Mail from "../../public/contact/mail.svg";
 import Medium from "../../public/contact/medium.svg";
 import Stackoverflow from "../../public/contact/stackoverflow.svg";
+import Github from "../../public/contact/github.svg";
+import Twitter from "../../public/contact/twitter.svg";
+import Linkedin from "../../public/contact/linkedin.svg";
+import Share from "../../public/contact/share.svg";
 
 const ContactMe = () => {
   const [openToggle, setOpenToggle] = useState(true);
-  const [openTogglea, setOpenTogglea] = useState();
-
-  // const navClassNames = openToggle ? "menu" : "toggle";
-  //
-  // const ref = useRef(null);
-  //
-  // useEffect(() => {}, []);
-  //
-
-  // const toggle = document.querySelector(".navbar");
-  // document.querySelector(".toggle").onClick = () => {
-  //   document.querySelector(".menu").classList.toggle("active");
-  // };
   const onclick = () => {
     setOpenToggle(!openToggle);
   };
@@ -40,7 +25,7 @@ const ContactMe = () => {
         onClick={() => onclick()}
       >
         <div className={styles.toggle} onClick={() => onclick()}>
-          <ShareAltOutlined />
+          <Share />
         </div>
         <li
           style={{
@@ -56,7 +41,7 @@ const ContactMe = () => {
             }}
             href="https://github.com/bekirytm"
           >
-            <GithubOutlined />
+            <Github />
           </a>
         </li>
         <li
@@ -73,7 +58,7 @@ const ContactMe = () => {
               color: "#1877f2",
             }}
           >
-            <TwitterOutlined />
+            <Twitter />
           </a>
         </li>
         <li
@@ -107,7 +92,7 @@ const ContactMe = () => {
               color: "#1877f2",
             }}
           >
-            <LinkedinOutlined />
+            <Linkedin />
           </a>
         </li>
         <li
