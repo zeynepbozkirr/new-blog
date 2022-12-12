@@ -135,7 +135,7 @@ const ContactMe = () => {
           }}
         >
           <a
-            href="https://medium.com/@bekir.ytm"
+            href="https://stackoverflow.com/users/12003912/bekirytm"
             style={{
               transform: "rotate(calc(360deg/-6 * 5))",
               color: "#1877f2",
