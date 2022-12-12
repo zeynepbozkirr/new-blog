@@ -44,13 +44,13 @@ const ContactMe = () => {
         </div>
         <li
           style={{
-            transform: "rotate(calc(360deg/4  *0))",
+            transform: "rotate(calc(360deg/6  *0))",
             transitionDelay: "calc(0.05s*0)",
           }}
         >
           <a
             style={{
-              transform: "rotate(calc(360deg/4  *0))",
+              transform: "rotate(calc(360deg/6  *0))",
               color: "black",
               // background: "transparent",
             }}
@@ -61,7 +61,7 @@ const ContactMe = () => {
         </li>
         <li
           style={{
-            transform: "rotate(calc(360deg/4  *1))",
+            transform: "rotate(calc(360deg/6  *1))",
             color: "#1877f2",
             transitionDelay: "calc(0.05s*1)",
           }}
@@ -69,7 +69,7 @@ const ContactMe = () => {
           <a
             href="#"
             style={{
-              transform: "rotate(calc(360deg/-4 *1))",
+              transform: "rotate(calc(360deg/-6 *1))",
               color: "#1877f2",
             }}
           >
@@ -78,7 +78,7 @@ const ContactMe = () => {
         </li>
         <li
           style={{
-            transform: "rotate(calc(360deg/4  *2))",
+            transform: "rotate(calc(360deg/6  *2))",
             color: "#1877f2",
             transitionDelay: "calc(0.05s*2)",
           }}
@@ -86,7 +86,7 @@ const ContactMe = () => {
           <a
             href="#"
             style={{
-              transform: "rotate(calc(360deg/-4  *2))",
+              transform: "rotate(calc(360deg/-6 *2))",
               color: "#1877f2",
             }}
           >
@@ -95,7 +95,7 @@ const ContactMe = () => {
         </li>
         <li
           style={{
-            transform: "rotate(calc(360deg/4  *3))",
+            transform: "rotate(calc(360deg/6  *3))",
             color: "#1877f2",
             transitionDelay: "calc(0.05s*3)",
           }}
@@ -103,7 +103,7 @@ const ContactMe = () => {
           <a
             href="https://www.linkedin.com/in/bekir-yetim-7b00b3181/"
             style={{
-              transform: "rotate(calc(360deg/-4 * 3))",
+              transform: "rotate(calc(360deg/-6 * 3))",
               color: "#1877f2",
             }}
           >
@@ -112,15 +112,15 @@ const ContactMe = () => {
         </li>
         <li
           style={{
-            transform: "rotate(calc(360deg/6  *3))",
+            transform: "rotate(calc(360deg/6  *4))",
             color: "#1877f2",
-            transitionDelay: "calc(0.05s*3)",
+            transitionDelay: "calc(0.05s*4)",
           }}
         >
           <a
             href="https://medium.com/@bekir.ytm"
             style={{
-              transform: "rotate(calc(360deg/-6 * 3))",
+              transform: "rotate(calc(360deg/-6 * 4))",
               color: "#1877f2",
             }}
           >
@@ -129,15 +129,15 @@ const ContactMe = () => {
         </li>
         <li
           style={{
-            transform: "rotate(calc(360deg/6  *3))",
+            transform: "rotate(calc(360deg/6  *5))",
             color: "#1877f2",
-            transitionDelay: "calc(0.05s*3)",
+            transitionDelay: "calc(0.05s*5)",
           }}
         >
           <a
             href="https://medium.com/@bekir.ytm"
             style={{
-              transform: "rotate(calc(360deg/-6 * 3))",
+              transform: "rotate(calc(360deg/-6 * 5))",
               color: "#1877f2",
             }}
           >
