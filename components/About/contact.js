@@ -12,7 +12,9 @@ import {
 } from "@ant-design/icons";
 
 const ContactMe = () => {
-  // const [openToggle, setOpenToggle] = useState();
+  const [openToggle, setOpenToggle] = useState(true);
+  const [openTogglea, setOpenTogglea] = useState();
+
   // const navClassNames = openToggle ? "menu" : "toggle";
   //
   // const ref = useRef(null);
@@ -20,39 +22,96 @@ const ContactMe = () => {
   // useEffect(() => {}, []);
   //
 
-  const toggle = document.querySelector(".navbar");
-  document.querySelector(".toggle").onClick = () => {
-    document.querySelector(".menu").classList.toggle("active");
+  // const toggle = document.querySelector(".navbar");
+  // document.querySelector(".toggle").onClick = () => {
+  //   document.querySelector(".menu").classList.toggle("active");
+  // };
+  const onclick = () => {
+    setOpenToggle(!openToggle);
   };
 
   return (
-    <>
-      <Card className={styles.menu}>
-        <div className="toggle">
+    <div className={styles.AboutContact}>
+      <div
+        className={`${
+          openToggle ? `${styles.menu}` : `${styles.menuactive}`
+        }  `}
+        onClick={() => onclick()}
+        // className={styles.menu}
+      >
+        <div className={styles.toggle} onClick={() => onclick()}>
           <ShareAltOutlined />
         </div>
-        <li className="--i:0, --clr:#1877f2">
-          <a href="#">
+        <li
+          style={{
+            transform: "rotate(calc(360deg/4  *0))",
+            color: "#9F2D87",
+            transitionDelay: "calc(0.05s*0)",
+          }}
+        >
+          <a
+            style={{
+              transform: "rotate(calc(360deg/4  *0))",
+              color: "#9F2D87",
+            }}
+            href="#"
+          >
             <GithubOutlined />
           </a>
         </li>
-        <li className="--i:1, --clr:#25d366">
-          <a href="#">
+        <li
+          style={{
+            transform: "rotate(calc(360deg/4  *1))",
+            color: "#1877f2",
+            transitionDelay: "calc(0.05s*1)",
+          }}
+        >
+          <a
+            href="#"
+            style={{
+              transform: "rotate(calc(360deg/-4 *1))",
+              color: "#1877f2",
+            }}
+          >
             <LinkedinOutlined />
           </a>
         </li>
-        <li className="--i:2, --clr:#1da1f2">
-          <a href="#">
+        <li
+          style={{
+            transform: "rotate(calc(360deg/4  *2))",
+            color: "#1877f2",
+            transitionDelay: "calc(0.05s*2)",
+          }}
+        >
+          <a
+            href="#"
+            style={{
+              transform: "rotate(calc(360deg/-4  *2))",
+              color: "#1877f2",
+            }}
+          >
             <TwitterOutlined />
           </a>
         </li>
-        <li className="--i:3, --clr:#c32aa2">
-          <a href="#">
+        <li
+          style={{
+            transform: "rotate(calc(360deg/4  *3))",
+            color: "#1877f2",
+            transitionDelay: "calc(0.05s*3)",
+          }}
+        >
+          <a
+            href="#"
+            style={{
+              transform: "rotate(calc(360deg/-4 * 3))",
+              color: "#1877f2",
+            }}
+          >
             <MailOutlined />
           </a>
         </li>
-      </Card>
-    </>
+      </div>
+    </div>
   );
 };
 
