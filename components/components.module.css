@@ -68,7 +68,7 @@
     color: #333;
     cursor: pointer;
     font-size: 2em;
-    transition: 1.25s;
+    transition: 0.5s;
     z-index:1000 ;
 
 }
@@ -86,7 +86,7 @@
     color: #333;
     cursor: pointer;
     font-size: 2em;
-    transition: 1.25s;
+    transition: 0.5s;
     z-index:1000 ;
     transform: rotate(360deg);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15),
@@ -129,7 +129,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    /*font-size: 5em;*/
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
     transition: 0.15s;
 }
@@ -150,6 +149,6 @@
 
 
 .menuactive li:hover a {
-    font-size: 1.5em;
+    /*font-size: 1.5em;*/
     box-shadow: 0 0 0 2px #71C08D, 0 0 0 6px #fff;
 }

@@ -10,6 +10,9 @@ import {
   TwitterOutlined,
   MailOutlined,
 } from "@ant-design/icons";
+import Mail from "../../public/contact/mail.svg";
+import Medium from "../../public/contact/medium.svg";
+import Stackoverflow from "../../public/contact/stackoverflow.svg";
 
 const ContactMe = () => {
   const [openToggle, setOpenToggle] = useState(true);
@@ -33,11 +36,8 @@ const ContactMe = () => {
   return (
     <div className={styles.AboutContact}>
       <div
-        className={`${
-          openToggle ? `${styles.menu}` : `${styles.menuactive}`
-        }  `}
+        className={openToggle ? styles.menu : styles.menuactive}
         onClick={() => onclick()}
-        // className={styles.menu}
       >
         <div className={styles.toggle} onClick={() => onclick()}>
           <ShareAltOutlined />
@@ -45,16 +45,16 @@ const ContactMe = () => {
         <li
           style={{
             transform: "rotate(calc(360deg/4  *0))",
-            color: "#9F2D87",
             transitionDelay: "calc(0.05s*0)",
           }}
         >
           <a
             style={{
               transform: "rotate(calc(360deg/4  *0))",
-              color: "#9F2D87",
+              color: "black",
+              // background: "transparent",
             }}
-            href="#"
+            href="https://github.com/bekirytm"
           >
             <GithubOutlined />
           </a>
@@ -73,7 +73,7 @@ const ContactMe = () => {
               color: "#1877f2",
             }}
           >
-            <LinkedinOutlined />
+            <TwitterOutlined />
           </a>
         </li>
         <li
@@ -90,7 +90,7 @@ const ContactMe = () => {
               color: "#1877f2",
             }}
           >
-            <TwitterOutlined />
+            <Mail />
           </a>
         </li>
         <li
@@ -101,13 +101,47 @@ const ContactMe = () => {
           }}
         >
           <a
-            href="#"
+            href="https://www.linkedin.com/in/bekir-yetim-7b00b3181/"
             style={{
               transform: "rotate(calc(360deg/-4 * 3))",
               color: "#1877f2",
             }}
           >
-            <MailOutlined />
+            <LinkedinOutlined />
+          </a>
+        </li>
+        <li
+          style={{
+            transform: "rotate(calc(360deg/6  *3))",
+            color: "#1877f2",
+            transitionDelay: "calc(0.05s*3)",
+          }}
+        >
+          <a
+            href="https://medium.com/@bekir.ytm"
+            style={{
+              transform: "rotate(calc(360deg/-6 * 3))",
+              color: "#1877f2",
+            }}
+          >
+            <Medium />
+          </a>
+        </li>
+        <li
+          style={{
+            transform: "rotate(calc(360deg/6  *3))",
+            color: "#1877f2",
+            transitionDelay: "calc(0.05s*3)",
+          }}
+        >
+          <a
+            href="https://medium.com/@bekir.ytm"
+            style={{
+              transform: "rotate(calc(360deg/-6 * 3))",
+              color: "#1877f2",
+            }}
+          >
+            <Stackoverflow />
           </a>
         </li>
       </div>
