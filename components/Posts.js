@@ -32,7 +32,8 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
           <Col span={24}>
             <div style={{ marginTop: "50px" }}>
               <Title
-                length="5"
+                style={{ width: "500px" }}
+                length="2"
                 ellipsis={{
                   rows: 1,
                   expandable: false,
@@ -51,11 +52,11 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 {post.category[0]} - {post.category[1]}
               </Text>
               <Paragraph
+                style={{ width: "500px", marginTop: "10px" }}
                 ellipsis={{
                   rows: 4,
                   expandable: false,
                 }}
-                style={{ marginTop: "10px" }}
               >
                 {post.postContent}
               </Paragraph>

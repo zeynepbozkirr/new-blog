@@ -36,6 +36,67 @@
     border-color:  #BA94D1 !important;
 
 }
+.drawer{
+}
+.searchBox{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    /*justify-content: space-around;*/
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+.searchBoxActive{
+    position: relative;
+    height: 60px;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    /*align-items: center;*/
+    transition: 0.5s;
+    overflow: hidden;
+    width: 200px;
+    font-size:1.5em;
+
+    /*font-size: 1.5em;*/
+}
+.searchBox .search{
+    /*position: relative;*/
+    /*min-height: 50px;*/
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    /*width: 10px;*/
+    /*height: 60px;*/
+    /*margin-right:60px ;*/
+    font-size:1.5em;
+    /*cursor: pointer;*/
+    /*width: 360px;*/
+
+}
+
+.searchBox .searchInput{
+    /*position: absolute;*/
+    /*left: 60px;*/
+    /*width: calc(100% - 120px);*/
+    /*height: 100%;*/
+    /*line-height: 60px;*/
+    scale: 0;
+
+
+}
+/*.searchBox .searchInput input{*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    font-size: 1.25em;*/
+/*}*/
+
 
 
 .AboutContact{
@@ -45,6 +106,7 @@
     min-height: 50vh;
     width:100%;
     height: 500px;
+
 
 }
 .menu {
@@ -76,34 +138,35 @@
 }
 
 .menuactive .toggle {
-    /*margin-left: 100px;*/
-    /*margin-bottom: -50px;*/
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background:#fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    cursor: pointer;
-    font-size: 2em;
-    transition: 0.5s;
+
+    /*position: relative;*/
+    /*width: 60px;*/
+    /*height: 60px;*/
+    /*background:#fff;*/
+    /*border-radius: 50%;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*color: #333;*/
+    /*cursor: pointer;*/
+    /*!*font-size: 2em;*!*/
+    /*transition: 0.5s;*/
     transform: rotate(360deg);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15),
     0 0 0 2px rgba(0, 0, 0, 0.1) , 0 0 0 8px #fff;
     z-index:1000 ;
+
 }
 
 .menu li {
     position: absolute;
+    left: 0;
     list-style: none;
-    transition: 0.015s;
-    transform-origin:140px ;
-    margin-left: -100px;
-    margin-top: -50px;
+    transition: 0.5s;
+    transform-origin:0;
     scale: 0;
+
+
 
 }
 
@@ -111,25 +174,26 @@
 
     position: absolute;
     list-style: none;
-    font-size: 2em;
+    /*font-size: 2em;*/
     transition:0.15s;
     transform-origin:140px ;
-    margin-left: -100px;
-    margin-top: -50px;
+    /*margin-left: -110px;*/
+    /*margin-top: -50px;*/
     scale: 1;
+
+
 
 }
 
 .menu li a{
-
     position: relative;
     width: 60px;
     height: 60px;
     background: #fff;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
-    transition: 0.15s;
 }
 .menuactive li a{
+    transition: 0.015s;
     position: relative;
     width: 60px;
     height: 60px;

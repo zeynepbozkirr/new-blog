@@ -22,11 +22,10 @@ const DrawerComp = ({ filterCategory, setFilterCategory }) => {
     <div
       style={{
         marginTop: "50px",
-        height: "60px",
+        // height: "60px",
       }}
     >
       <SearchInput
-        style={{}}
         searchHandleChange={(e) => searchHandleChange(e)}
       ></SearchInput>
 
