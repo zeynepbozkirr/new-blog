@@ -16,7 +16,7 @@ const SearchInput = ({ searchHandleChange }) => {
       <div className={style.searchInput}>
         <Input
           style={{
-            background: " bisque",
+            // background: " bisque",
             position: "absolute",
             width: " 140px",
             height: " 70px",

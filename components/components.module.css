@@ -49,6 +49,8 @@
     justify-content: space-between;
     transition: 0.5s;
     overflow: hidden;
+    margin-bottom: 10px;
+
 
 }
 .searchBoxActive{
@@ -90,7 +92,7 @@
 
 
 .searchInput input{
-    background: bisque;
+    /*background: bisque;*/
     position: absolute;
     width: 100px;
     height: 100%;
@@ -119,13 +121,11 @@
 
 
 }
-.menu .toggle {
-    /*margin-left: 100px;*/
-    /*margin-bottom: -10px;*/
+ .toggle {
+
     position: relative;
     width: 60px;
     height: 60px;
-    background:#fff;
     border-radius: 50%;
     box-shadow: 0 3px 4px rgba(0, 0 ,0 ,0.15);
     display: flex;
@@ -141,18 +141,6 @@
 
 .menuactive .toggle {
 
-    /*position: relative;*/
-    /*width: 60px;*/
-    /*height: 60px;*/
-    /*background:#fff;*/
-    /*border-radius: 50%;*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*color: #333;*/
-    /*cursor: pointer;*/
-    /*!*font-size: 2em;*!*/
-    /*transition: 0.5s;*/
     transform: rotate(360deg);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15),
     0 0 0 2px rgba(0, 0, 0, 0.1) , 0 0 0 8px #fff;
@@ -161,14 +149,14 @@
 }
 
 .menu li {
+
     position: absolute;
     left: 0;
     list-style: none;
     transition: 0.5s;
-    transform-origin:0;
     scale: 0;
-
-
+    /*margin-left: 110px;*/
+    bottom: 0;
 
 }
 
@@ -176,26 +164,27 @@
 
     position: absolute;
     list-style: none;
-    /*font-size: 2em;*/
     transition:0.15s;
     transform-origin:140px ;
-    /*margin-left: -110px;*/
-    /*margin-top: -50px;*/
+    margin-left: -110px;
+    margin-top: -50px;
     scale: 1;
-
-
 
 }
 
 .menu li a{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     width: 60px;
     height: 60px;
     background: #fff;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
 }
+
 .menuactive li a{
-    transition: 0.015s;
     position: relative;
     width: 60px;
     height: 60px;

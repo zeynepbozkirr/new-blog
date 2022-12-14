@@ -30,7 +30,7 @@ const ContactMe = () => {
         <li
           style={{
             transform: "rotate(calc(360deg/6  *0))",
-            transitionDelay: "calc(0.5s*0)",
+            transitionDelay: "calc(0.15s*0)",
           }}
         >
           <a
@@ -48,7 +48,7 @@ const ContactMe = () => {
           style={{
             transform: "rotate(calc(360deg/6  *1))",
             color: "#1877f2",
-            transitionDelay: "calc(0.5s*1)",
+            transitionDelay: "calc(0.15s*1)",
           }}
         >
           <a
@@ -65,7 +65,7 @@ const ContactMe = () => {
           style={{
             transform: "rotate(calc(360deg/6  *2))",
             color: "#1877f2",
-            transitionDelay: "calc(0.5s*2)",
+            transitionDelay: "calc(0.15s*2)",
           }}
         >
           <a
@@ -82,7 +82,7 @@ const ContactMe = () => {
           style={{
             transform: "rotate(calc(360deg/6  *3))",
             color: "#1877f2",
-            transitionDelay: "calc(0.5s*3)",
+            transitionDelay: "calc(0.15s*3)",
           }}
         >
           <a
@@ -99,7 +99,7 @@ const ContactMe = () => {
           style={{
             transform: "rotate(calc(360deg/6  *4))",
             color: "#1877f2",
-            transitionDelay: "calc(0.5s*4)",
+            transitionDelay: "calc(0.15s*4)",
           }}
         >
           <a
@@ -116,7 +116,7 @@ const ContactMe = () => {
           style={{
             transform: "rotate(calc(360deg/6  *5))",
             color: "#1877f2",
-            transitionDelay: "calc(0.5s*5)",
+            transitionDelay: "calc(0.15s*5)",
           }}
         >
           <a
