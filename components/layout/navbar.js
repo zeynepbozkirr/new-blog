@@ -6,11 +6,13 @@ import ListSearch from "../Drawer/categoryList";
 
 const Navbar = () => {
   return (
-    <Row justify="center" style={{ background: "#D9D9D9" }}>
-      <Col>
+    <Row justify="space-between">
+      <Col span={12}>
         <Link href="/">
-          <Image width="80px" src="./logo.png" preview={false} />
+          <text style={{ color: "white" }}> BEKİR YETİM </text>
         </Link>
+      </Col>
+      <Col span={12}>
         <Link href="/About">About</Link>
       </Col>
     </Row>

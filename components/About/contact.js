@@ -19,7 +19,7 @@ const ContactMe = () => {
   };
 
   return (
-    <div className={styles.AboutContact}>
+    <div className={styles.contact}>
       <div
         className={openToggle ? styles.menu : styles.menuactive}
         onClick={() => onclick()}

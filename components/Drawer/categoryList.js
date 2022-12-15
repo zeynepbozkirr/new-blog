@@ -5,6 +5,12 @@ import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
 import styles from "../components.module.css";
 import lodash from "lodash";
+import {
+  FallingLines,
+  Rings,
+  ThreeCircles,
+  ThreeDots,
+} from "react-loader-spinner";
 
 const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
   const { Paragraph } = Typography;
@@ -39,7 +45,21 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
   };
 
   return loading ? (
-    <div>load</div>
+    <div>
+      <ThreeCircles
+        height="40"
+        width="40"
+        radius="9"
+        color="#9E7676"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+        ariaLabel="three-circles-rotating"
+        outerCircleColor=""
+        innerCircleColor=""
+        middleCircleColor=""
+      />
+    </div>
   ) : (
     <div>
       <Row>
@@ -78,7 +98,6 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
                 </Paragraph>
               ))}
             </Fade>
-            <button onClick={() => console.log(allArr, "VER")}>VER</button>
           </div>
         )}
       </Row>

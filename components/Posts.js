@@ -32,7 +32,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
           <Col span={24}>
             <div style={{ marginTop: "50px" }}>
               <Title
-                style={{ width: "500px" }}
+                style={{ width: "500px", color: "white" }}
                 length="2"
                 ellipsis={{
                   rows: 1,
@@ -42,17 +42,18 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 {post.title}
               </Title>
 
-              <Text>{post.date}</Text>
-              <Text style={{ color: "#989da2" }}>
-                &nbsp; - &nbsp; <ReadOutlined style={{ color: "#FAAB78" }} />
-                615 okunma
+              <Text style={{ color: "#BA94D1" }}>
+                <ReadOutlined style={{ color: "white" }} />
+                &nbsp; 615 okunma &nbsp; - &nbsp;
               </Text>
+              <Text style={{ color: "#BA94D1" }}>{post.date}</Text>
+
               <br />
-              <Text style={{ color: "purple" }}>
+              <Text style={{ color: "#BA94D1" }}>
                 {post.category[0]} - {post.category[1]}
               </Text>
               <Paragraph
-                style={{ width: "500px", marginTop: "10px" }}
+                style={{ width: "500px", marginTop: "10px", color: "white" }}
                 ellipsis={{
                   rows: 4,
                   expandable: false,
