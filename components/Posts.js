@@ -29,10 +29,10 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     .map((post) => {
       return (
         <Row>
-          <Col span={24}>
-            <div style={{ marginTop: "50px" }}>
+          <Col>
+            <div style={{ marginTop: "50px", width: "600px" }}>
               <Title
-                style={{ width: "500px", color: "white" }}
+                style={{ width: "500px" }}
                 length="2"
                 ellipsis={{
                   rows: 1,
@@ -42,18 +42,18 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 {post.title}
               </Title>
 
-              <Text style={{ color: "#BA94D1" }}>
-                <ReadOutlined style={{ color: "white" }} />
+              <Text style={{ color: "#989DA2" }}>
+                <ReadOutlined style={{ color: "#FF5959" }} />
                 &nbsp; 615 okunma &nbsp; - &nbsp;
               </Text>
-              <Text style={{ color: "#BA94D1" }}>{post.date}</Text>
+              <Text style={{ color: "#989DA2" }}>{post.date}</Text>
 
               <br />
-              <Text style={{ color: "#BA94D1" }}>
+              <Text style={{ color: "#989DA2" }}>
                 {post.category[0]} - {post.category[1]}
               </Text>
               <Paragraph
-                style={{ width: "500px", marginTop: "10px", color: "white" }}
+                style={{ width: "550px", marginTop: "10px" }}
                 ellipsis={{
                   rows: 4,
                   expandable: false,

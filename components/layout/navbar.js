@@ -9,7 +9,7 @@ const Navbar = () => {
     <Row justify="space-between">
       <Col span={12}>
         <Link href="/">
-          <text style={{ color: "white" }}> BEKİR YETİM </text>
+          <text style={{}}> BEKİR YETİM </text>
         </Link>
       </Col>
       <Col span={12}>

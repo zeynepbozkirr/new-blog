@@ -13,7 +13,7 @@ import {
 } from "react-loader-spinner";
 
 const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
-  const { Paragraph } = Typography;
+  const { Paragraph, Text } = Typography;
 
   const [allArr, setAllArr] = useState([]);
   const [repeatData, setRepeatData] = useState([]);
@@ -45,21 +45,18 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
   };
 
   return loading ? (
-    <div>
-      <ThreeCircles
-        height="40"
-        width="40"
+    <Row justify={"center"} align={"center"} style={{ marginTop: "100px" }}>
+      <ThreeDots
+        height="80"
+        width="80"
         radius="9"
-        color="#9E7676"
+        color="#FF5959"
+        ariaLabel="three-dots-loading"
         wrapperStyle={{}}
         wrapperClassName=""
         visible={true}
-        ariaLabel="three-circles-rotating"
-        outerCircleColor=""
-        innerCircleColor=""
-        middleCircleColor=""
       />
-    </div>
+    </Row>
   ) : (
     <div>
       <Row>
@@ -88,12 +85,25 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
           <div>
             <Fade left>
               {allArr?.map((pos, index) => (
-                <Paragraph>
+                <Paragraph
+                  ellipsis={{
+                    rows: 1,
+                    expandable: false,
+                  }}
+                >
                   <Button
                     className={styles.categoryButton}
                     onClick={() => onClickCategory(pos)}
                   >
-                    {pos}----- {repeatData.filter((x) => x === pos).length}
+                    <Text
+                      ellipsis={{
+                        rows: 1,
+                        expandable: false,
+                      }}
+                    >
+                      {pos}
+                    </Text>
+                    <Text>({repeatData.filter((x) => x === pos).length})</Text>
                   </Button>
                 </Paragraph>
               ))}

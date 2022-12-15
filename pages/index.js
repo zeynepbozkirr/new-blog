@@ -10,13 +10,12 @@ import { SearchOutlined } from "@ant-design/icons";
 export default function Home() {
   const { documents: AllPosts } = useCollection("posts");
   const [filterCategory, setFilterCategory] = useState();
-  const [searchActive, setSearchActive] = useState();
 
   return (
-    <div>
+    <div className="App">
       {AllPosts ? (
-        <Row justify="center">
-          <Col md={14} xs={14} offset={1}>
+        <Row>
+          <Col md={15} xs={24}>
             <Posts
               filterCategory={filterCategory}
               setFilterCategory={(x) => setFilterCategory(x)}
@@ -36,7 +35,7 @@ export default function Home() {
               height="80"
               width="80"
               radius="9"
-              color="#9E7676"
+              color="#FF5959"
               ariaLabel="three-dots-loading"
               wrapperStyle={{}}
               wrapperClassName=""

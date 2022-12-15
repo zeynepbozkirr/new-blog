@@ -5,9 +5,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
-  color: white;
-  background: rgb(20,14,56);
-  background: linear-gradient(120deg, rgba(20,14,56,1) 12%, rgba(48,29,112,1) 56%, rgba(82,74,38,1) 100%);
+  /*color: white;*/
+  /*background: rgb(57,62,70);*/
+  /*background: linear-gradient(120deg, rgba(57,62,70,1) 12%, rgba(48,71,94,1) 100%);*/
 }
 
 a {
@@ -57,12 +57,12 @@ a {
 
 .paginationBttns a:hover {
   color: #FFFFFF;
-  background-color: #BA94D1;
+  background-color: #FF5959;
 }
 
 .paginationActive a {
   color: #FFFFFF;
-  background-color:#BA94D1;
+  background-color:#FF5959;
 ;
 }
 
