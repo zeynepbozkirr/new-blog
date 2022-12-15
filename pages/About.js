@@ -3,7 +3,7 @@ import AboutComp from "../components/About";
 
 const About = () => {
   return (
-    <div>
+    <div style={{ background: "#334257" }}>
       <AboutComp />
     </div>
   );

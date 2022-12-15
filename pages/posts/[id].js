@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ThreeDots } from "react-loader-spinner";
 import Drawer from "../../components/Drawer";
+import renderHTML from "react-render-html";
+import { ReadOutlined } from "@ant-design/icons";
 
 const { Paragraph, Title, Text } = Typography;
 
@@ -32,11 +34,33 @@ const PostDetail = ({ props }) => {
             <Col>
               <Title>{posts.title}</Title>
             </Col>
-            <Col>
-              <Paragraph style={{}}>{posts.postContent}</Paragraph>
+            <Col>{renderHTML(posts.postContent)}</Col>
+            <Col style={{ textAlign: "end", marginTop: "30px" }}>
+              <Text style={{ color: "#FF5959", fontWeight: "bold" }}>
+                Bekir Yetim
+              </Text>{" "}
+              <br />
             </Col>
-            <Col style={{ textAlign: "end", color: "red", marginTop: "30px" }}>
-              <Text style={{ color: "red" }}>Zeynep Bozkır</Text> <br />
+            <Col>
+              <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
+                Eklenme Tarihi :{" "}
+              </Text>
+              <Text style={{ color: "#FF5959" }}>{posts.date}</Text>
+            </Col>
+            <Col>
+              <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
+                Okunma Sayısı :
+              </Text>
+              <Text style={{ color: "#FF5959" }}> 615 okunma</Text>
+            </Col>
+            <Col>
+              <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
+                Category :{" "}
+              </Text>
+
+              {posts.category.map((item) => {
+                return <Text style={{ color: "#FF5959" }}>{item} </Text>;
+              })}
             </Col>
           </Col>
           <Col md={6} xs={24} offset={2}>

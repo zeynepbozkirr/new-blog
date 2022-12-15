@@ -7,6 +7,8 @@ const { Paragraph, Text, Title } = Typography;
 import styles from "./components.module.css";
 import { ReadOutlined } from "@ant-design/icons";
 import ReactPaginate from "react-paginate";
+import ArrowRight from "../public/arrowRight.svg";
+import renderHTML from "react-render-html";
 
 const Posts = ({ filterCategory, setFilterCategory }) => {
   const { documents: Posts } = useCollection("posts");
@@ -59,7 +61,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                   expandable: false,
                 }}
               >
-                {post.postContent}
+                {renderHTML(post.postContent)}
               </Paragraph>
               <Link
                 style={{
@@ -69,7 +71,8 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 href={`/posts/${post.id}`}
               >
                 <Button className={styles.button}>
-                  <Text className={styles.buttonText}>Read More {`>>`}</Text>
+                  <Text className={styles.buttonText}>Read More</Text>
+                  <ArrowRight />
                 </Button>
               </Link>
               <hr />

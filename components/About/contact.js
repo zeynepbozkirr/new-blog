@@ -18,6 +18,12 @@ const ContactMe = () => {
     setOpenToggle(!openToggle);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setOpenToggle(false);
+    }, 1000);
+  }, []);
+
   return (
     <div className={styles.contact}>
       <div

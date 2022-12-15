@@ -8,10 +8,9 @@ const AboutMe = () => {
     <div>
       <Card
         style={{
-          border: "solid 1px ",
-          // borderLeft: "solid 1px ",
-          // borderBottom: "solid 1px ",
-          borderRadius: "0",
+          background: "rgba(187, 191, 202, 0.5)",
+          borderRadius: 10,
+          borderWidth: 0,
           width: "100%",
           height: "500px",
         }}
