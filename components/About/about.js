@@ -15,30 +15,16 @@ const AboutMe = () => {
           height: "500px",
         }}
       >
-        <Text>
-          dddsfgdsxhg sdgdsfg, <br />
+        <Text className="About">
+          Merhaba, 9 Eylül Üniversitesinde okuduğum bölümle yazılım serüvenime
+          başladım. Şu anda 24 yaşında ve 3 yıllık çalışma deneyimine sahibim.
+          Değişime ve yeniliğe açık, araştırmacı ve azimli bir kişiliğe sahibim.
+          Şu anda mobil uygulama geliştirme alanında çalışıyorum. Kariyerimin
+          bundan sonraki döneminde front end developer olarak devam etmek
+          istiyorum.
         </Text>
-        <Text>
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg dddsfgdsxhg sdgdsfg
-          dddsfgdsxhg sdgdsfg sdgdsfg dddsfgdsxhg sdgdsfg
-        </Text>
+        <br />
+        <Text className="About">Bekir Yetim</Text>
       </Card>
     </div>
   );

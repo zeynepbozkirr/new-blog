@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AboutComp from "../components/About";
 import style from "../styles/Home.module.css";
 import useWindowSize from "../Hooks/useWindowSize";
 
 const About = () => {
   const { width, height } = useWindowSize();
+  const [size, setSize] = useState({});
+
+  const onclick = () => {
+    setSize({
+      width: width,
+      height: height,
+    });
+  };
+  useEffect(() => {
+    onclick();
+  }, [width, height]);
   return (
-    <div className={style.About} style={{ height: height - 55 }}>
+    <div className={style.About} style={{ height: size.height }}>
       <AboutComp />
     </div>
   );
