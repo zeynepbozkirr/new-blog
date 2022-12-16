@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Hammersmith+One&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family:'Diplomata SC', cursive,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
   /*color: white;*/
@@ -13,11 +14,14 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+
 }
 
 * {
   box-sizing: border-box;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -67,4 +71,24 @@ a {
 }
 
 
+.Navbar{
+  font-family: 'Diplomata SC', cursive;
+  font-family: 'Hammersmith One', sans-serif;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: 'Noto Sans Chakma', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Yellowtail', cursive;
+  /*color: black !important;*/
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  height: 100%;
+  padding-left: 30px;
+  /*margin-left: 40px;*/
+  font-size: 30px;
+  color: #FF5959;
 
+}
+.Navbar:hover{
+  color: #FF5959 !important;
+}
