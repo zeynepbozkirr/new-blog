@@ -13,6 +13,15 @@ const AboutMe = () => {
           borderWidth: 0,
           width: "100%",
           height: "500px",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          // paddingLeft: "30px",
+          // paddingRight: "50px",
+          // paddingTop: "30px",
+
+          // margin-right: 80px;
         }}
       >
         <Text className="About">
@@ -24,7 +33,7 @@ const AboutMe = () => {
           istiyorum.
         </Text>
         <br />
-        <Text className="About">Bekir Yetim</Text>
+        <Text className="AboutName">Bekir Yetim</Text>
       </Card>
     </div>
   );

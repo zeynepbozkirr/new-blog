@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Hammersmith+One&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Hammersmith+One&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Satisfy&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Diplomata+SC&family=Hammersmith+One&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Passions+Conflict&family=Satisfy&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Diplomata+SC&family=Hammersmith+One&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Passions+Conflict&family=Satisfy&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family:'Diplomata SC',Hammersmith One,Kdam Thmor Pro, cursive,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family:'Caveat','Diplomata SC', cursive,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
   /*color: white;*/
@@ -92,14 +95,34 @@ a {
   color: #FF5959 !important;
 }
 .About{
+  font-family: 'Caveat', cursive;
   font-family: 'Diplomata SC', cursive;
   font-family: 'Hammersmith One', sans-serif;
+  font-family: 'Indie Flower', cursive;
   font-family: 'Kdam Thmor Pro', sans-serif;
   font-family: 'Noto Sans Chakma', sans-serif;
   font-family: 'Passions Conflict', cursive;
   font-family: 'Satisfy', cursive;
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Yellowtail', cursive;
+  font-size: 18px;
+
+}
+
+.AboutName{
+  font-family: 'Caveat', cursive;
+  font-family: 'Diplomata SC', cursive;
+  font-family: 'Hammersmith One', sans-serif;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: 'Noto Sans Chakma', sans-serif;
+  font-family: 'Passions Conflict', cursive;
+  font-family: 'Satisfy', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Yellowtail', cursive;
+  font-size: 20px;
+  display: flex;
+  justify-content: end;
 
 }
 @media(max-width:768px){
