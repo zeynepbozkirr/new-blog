@@ -2,8 +2,11 @@ import React from "react";
 import { Col, Row } from "antd";
 import AboutMe from "./about";
 import ContactMe from "./contact";
+import useWindowSize from "../../Hooks/useWindowSize";
 
 const AboutComp = () => {
+  const { width, height } = useWindowSize();
+
   return (
     <div
       style={{
@@ -13,6 +16,7 @@ const AboutComp = () => {
       }}
     >
       <Row
+        className="AboutRow"
         style={{
           display: "flex",
           alignItems: "center",

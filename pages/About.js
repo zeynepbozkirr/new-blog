@@ -16,8 +16,12 @@ const About = () => {
   useEffect(() => {
     onclick();
   }, [width, height]);
+
   return (
-    <div className={style.About} style={{ height: size.height }}>
+    <div
+      className={style.About}
+      style={{ height: size.width < 768 ? 1100 : size.height }}
+    >
       <AboutComp />
     </div>
   );

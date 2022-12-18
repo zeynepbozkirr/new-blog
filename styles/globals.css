@@ -79,15 +79,13 @@ a {
   font-family: 'Noto Sans Chakma', sans-serif;
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Yellowtail', cursive;
-  /*color: black !important;*/
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
   height: 100%;
   padding-left: 30px;
-  /*margin-left: 40px;*/
   font-size: 30px;
   color: #FF5959;
+  /*position: relative;*/
 
 }
 .Navbar:hover{
@@ -103,4 +101,12 @@ a {
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Yellowtail', cursive;
 
+}
+@media(max-width:768px){
+.AboutRow{
+  padding-left: 50px;
+  padding-right: 50px;
+
+
+}
 }
