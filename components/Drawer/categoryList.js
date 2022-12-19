@@ -5,12 +5,7 @@ import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
 import styles from "../components.module.css";
 import lodash from "lodash";
-import {
-  FallingLines,
-  Rings,
-  ThreeCircles,
-  ThreeDots,
-} from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
   const { Paragraph, Text } = Typography;
@@ -19,12 +14,19 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
   const [repeatData, setRepeatData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const onClickCategory = (categ) => {
-    const filterCategory = Posts?.filter((post) =>
-      post.category.includes(categ.toLocaleLowerCase())
-    );
+  const onClickCategory = (pos) => {
+    const filterCategory = Posts.filter((post) => {
+      let p = [];
+      for (let i = 0; i < post.category.length; i++) {
+        p.push(post.category[i].toLowerCase().trim());
+      }
+      if (p.includes(pos)) {
+        return post;
+      }
+    });
     setFilterCategory(filterCategory);
   };
+
   useEffect(() => {
     categoryCount();
   }, [Posts]);
@@ -35,9 +37,16 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
       for (let i = 0; i < Posts.length; i++) {
         a = [...a, ...Posts[i].category.flat()];
       }
-      setRepeatData(a);
-      const b = _.chain(a).uniq().value();
+      let c = [];
+      for (let j = 0; j < a.length; j++) {
+        c.push(a[j].toLowerCase().trim());
+      }
+      setRepeatData(c);
+
+      const b = _.chain(c).uniq().value();
+
       await setAllArr(b);
+
       setTimeout(() => {
         setLoading(false);
       }, 1000);

@@ -7,6 +7,7 @@ import { ThreeDots } from "react-loader-spinner";
 import Drawer from "../../components/Drawer";
 import renderHTML from "react-render-html";
 import { ReadOutlined } from "@ant-design/icons";
+import SearchInput from "../../components/Drawer/searchInput";
 
 const { Paragraph, Title, Text } = Typography;
 
@@ -30,7 +31,7 @@ const PostDetail = ({ props }) => {
     <>
       {posts ? (
         <Row justify="center">
-          <Col md={14} xs={14} offset={1} style={{ marginTop: "50px" }}>
+          <Col md={14} xs={14} style={{ marginTop: "50px" }}>
             <Col>
               <Title>{posts.title}</Title>
             </Col>
@@ -51,7 +52,7 @@ const PostDetail = ({ props }) => {
               <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
                 Okunma Sayısı :
               </Text>
-              <Text style={{ color: "#FF5959" }}> 615 okunma</Text>
+              <Text style={{ color: "#FF5959" }}> 1 okunma</Text>
             </Col>
             <Col>
               <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
@@ -62,9 +63,6 @@ const PostDetail = ({ props }) => {
                 return <Text style={{ color: "#FF5959" }}>{item} </Text>;
               })}
             </Col>
-          </Col>
-          <Col md={6} xs={24} offset={2}>
-            <Drawer />
           </Col>
         </Row>
       ) : (

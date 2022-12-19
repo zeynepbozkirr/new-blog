@@ -46,7 +46,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
 
               <Text style={{ color: "#989DA2" }}>
                 <ReadOutlined style={{ color: "#FF5959" }} />
-                &nbsp; 615 okunma &nbsp; - &nbsp;
+                &nbsp; 1 okunma &nbsp; - &nbsp;
               </Text>
               <Text style={{ color: "#989DA2" }}>{post.date}</Text>
 

@@ -16,7 +16,6 @@ const SearchInput = ({ searchHandleChange }) => {
         <Input
           placeholder="Search"
           bordered={false}
-          // allowClear={"ww"}
           onChange={(e) => searchHandleChange(e.target.value)}
         ></Input>
       </div>

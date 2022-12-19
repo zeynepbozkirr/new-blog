@@ -10,13 +10,14 @@ const DrawerComp = ({ filterCategory, setFilterCategory }) => {
   const searchHandleChange = async (e) => {
     if (e !== "") {
       const filterSearchData = Posts?.filter((post) =>
-        post.title.includes(e.toLocaleLowerCase())
+        post.title.toLocaleLowerCase().includes(e)
       );
       setSearchData(filterSearchData);
     } else {
       setSearchData("");
     }
   };
+  console.log(searchData, "ff");
 
   return (
     <div
