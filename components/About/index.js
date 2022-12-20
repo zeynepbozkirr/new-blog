@@ -5,30 +5,23 @@ import ContactMe from "./contact";
 
 const AboutComp = () => {
   return (
-    <div
+    <Row
+      className="AboutRow"
       style={{
+        width: "100%",
         height: "100%",
         display: "flex",
-        // alignItems: "center",
-        justifyContent: "center",
+        alignItems: "center",
+        justifyContent: "space-between",
       }}
     >
-      <Row
-        className="AboutRow"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Col md={12} xs={24} s={24} style={{}}>
-          <AboutMe />
-        </Col>
-        <Col md={12} xs={24} s={24}>
-          <ContactMe />
-        </Col>
-      </Row>
-    </div>
+      <Col lg={12} md={12} xs={24} sm={24}>
+        <AboutMe />
+      </Col>
+      <Col xl={12} lg={12} md={12} xs={24} sm={24}>
+        <ContactMe />
+      </Col>
+    </Row>
   );
 };
 

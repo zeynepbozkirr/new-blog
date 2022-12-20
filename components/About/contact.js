@@ -1,9 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Card, Typography } from "antd";
+import React, { useEffect, useState } from "react";
 import styles from "../components.module.css";
-const { Paragraph, Text, Title } = Typography;
-import { Helmet } from "react-helmet";
-import { ShareAltOutlined } from "@ant-design/icons";
 import Mail from "../../public/contact/mail.svg";
 import Medium from "../../public/contact/medium.svg";
 import Stackoverflow from "../../public/contact/stackoverflow.svg";

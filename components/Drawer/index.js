@@ -17,16 +17,15 @@ const DrawerComp = ({ filterCategory, setFilterCategory }) => {
       setSearchData("");
     }
   };
-  console.log(searchData, "ff");
 
   return (
     <div
       style={{
         marginTop: "50px",
-        // height: "60px",
       }}
     >
       <SearchInput
+        setSearchData={(x) => setSearchData(x)}
         searchHandleChange={(e) => searchHandleChange(e)}
       ></SearchInput>
 

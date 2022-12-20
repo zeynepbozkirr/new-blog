@@ -4,13 +4,10 @@ import { db } from "../../firebase/config";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ThreeDots } from "react-loader-spinner";
-import Drawer from "../../components/Drawer";
 import renderHTML from "react-render-html";
-import { ReadOutlined } from "@ant-design/icons";
 import { useCollection } from "../../Hooks/useCollection";
 import Link from "next/link";
 import styles from "../../components/components.module.css";
-import ArrowRight from "../../public/arrowRight.svg";
 
 const { Paragraph, Title, Text } = Typography;
 
@@ -96,7 +93,7 @@ const PostDetail = ({ props }) => {
                         <Text
                           ellipsis={{
                             rows: 1,
-                            expandable: false,
+                            // expandable: false,
                           }}
                           style={{
                             color: "black",

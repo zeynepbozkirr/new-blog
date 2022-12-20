@@ -6,23 +6,11 @@
 .main {
   min-height: 100vh;
   padding: 4rem 0;
-  /*flex: 1;*/
   display: flex;
   flex-direction: column;
-  /*justify-content: center;*/
 
 }
 
 
-.About{
-  background-color: #3C4048;
-
-
-  /*background-color: red;*/
-  /*background-color: #E2E3E4;*/
-
-  /*z-index: 1000;*/
-
-}
 
 

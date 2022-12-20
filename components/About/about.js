@@ -1,24 +1,20 @@
 import React from "react";
 import { Card, Typography } from "antd";
-import styles from "../components.module.css";
 import { TypeAnimation } from "react-type-animation";
 
-const { Paragraph, Text, Title } = Typography;
+const { Text } = Typography;
 
 const AboutMe = () => {
   return (
-    <div>
+    <div style={{ height: "450px" }}>
       <Card
         style={{
           backgroundColor: "transparent",
           borderWidth: 0,
-          width: "400px",
-          // marginRight: "100px",
-          marginTop: "40px",
+          // width: "100%",
           textAlign: "center",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
           alignItems: "center",
         }}
         cover={
@@ -32,7 +28,6 @@ const AboutMe = () => {
               style={{
                 display: "flex",
                 paddingLeft: "80px",
-
                 width: "400px",
               }}
             >
@@ -73,6 +68,7 @@ const AboutMe = () => {
       >
         <TypeAnimation
           sequence={[
+            1000,
             "    Merhaba, 9 Eylül Üniversitesinde okuduğum bölümle yazılım serüvenime\n" +
               " başladım. Şu anda 24 yaşında ve 3 yıllık çalışma deneyimine sahibim.\n" +
               "          Değişime ve yeniliğe açık, araştırmacı ve azimli bir kişiliğe sahibim.\n" +
@@ -82,7 +78,7 @@ const AboutMe = () => {
             2000,
           ]}
           cursor={false}
-          speed={60}
+          speed={80}
           style={{
             display: "flex",
             justifyContent: "center",

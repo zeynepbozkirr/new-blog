@@ -65,12 +65,10 @@
     width: 40px;
     height: 40px;
     display: flex;
-    /*justify-content: center;*/
     transition: 0.5s;
     overflow: hidden;
     margin-bottom: 10px;
     background: #fff;
-/*border-radius: 10px;*/
 
 
 }
@@ -81,13 +79,11 @@
     position: relative;
     height: 40px;
     display: flex;
-    /*justify-content: space-between;*/
     transition: 0.5s;
     overflow: hidden;
     width: 220px;
     margin-bottom: 20px;
     background: #fff;
-    /*border-radius: 10px;*/
 
 
 }
@@ -128,12 +124,7 @@
     justify-content: center;
     align-items: center;
     min-height: 50vh;
-    width:400px;
     height: 500px;
-    /*background: blue;*/
-    /*border-radius: 20%;*/
-    /*margin-left: 20px;*/
-    /*background: rgba(187, 191, 202, 0.5);*/
 
 }
 .menu {
@@ -169,11 +160,9 @@
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15),
     0 0 0 2px rgba(0, 0, 0, 0.1) , 0 0 0 8px #fff;
     z-index:1000 ;
-
 }
 
 .menu li {
-
     position: absolute;
     left: 0;
     list-style: none;

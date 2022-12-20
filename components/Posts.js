@@ -45,7 +45,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     ?.slice(pagesVisited, pagesVisited + usersPerPage)
     .map((post) => {
       return (
-        <Row>
+        <Row key={post.id}>
           <Col>
             <div style={{ marginTop: "50px", width: "600px" }}>
               <Title

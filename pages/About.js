@@ -20,7 +20,10 @@ const About = () => {
   return (
     <div
       className={style.About}
-      style={{ height: size.width < 768 ? 1100 : size.height }}
+      style={{
+        height: size.width < 768 ? 1100 : size.height,
+        backgroundColor: "#3C4048",
+      }}
     >
       <AboutComp />
     </div>

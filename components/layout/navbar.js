@@ -1,8 +1,6 @@
 import React from "react";
-import { Col, Image, Row } from "antd";
-import image from "../../public/logo.png";
+import { Col, Row } from "antd";
 import Link from "next/link";
-import ListSearch from "../Drawer/categoryList";
 
 const Navbar = () => {
   return (
