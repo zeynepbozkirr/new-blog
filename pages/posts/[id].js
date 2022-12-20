@@ -57,7 +57,7 @@ const PostDetail = ({ props }) => {
               <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
                 Okunma Sayısı :
               </Text>
-              <Text style={{ color: "#FF5959" }}> 1 okunma</Text>
+              <Text style={{ color: "#FF5959" }}> {posts.readCount}</Text>
             </Col>
             <Col>
               <Text style={{ color: "#989DA2", fontWeight: "bold" }}>

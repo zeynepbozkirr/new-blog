@@ -2,17 +2,15 @@ import React from "react";
 import { Col, Row } from "antd";
 import AboutMe from "./about";
 import ContactMe from "./contact";
-import useWindowSize from "../../Hooks/useWindowSize";
 
 const AboutComp = () => {
-  const { width, height } = useWindowSize();
-
   return (
     <div
       style={{
         height: "100%",
         display: "flex",
-        alignItems: "center",
+        // alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Row
@@ -20,13 +18,13 @@ const AboutComp = () => {
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
         }}
-        justify="center"
       >
-        <Col md={10} xs={24}>
+        <Col md={12} xs={24} s={24} style={{}}>
           <AboutMe />
         </Col>
-        <Col md={10} xs={24}>
+        <Col md={12} xs={24} s={24}>
           <ContactMe />
         </Col>
       </Row>

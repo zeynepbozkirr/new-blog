@@ -128,10 +128,12 @@
     justify-content: center;
     align-items: center;
     min-height: 50vh;
-    width:100%;
+    width:400px;
     height: 500px;
-    background: #334257
-
+    /*background: blue;*/
+    /*border-radius: 20%;*/
+    /*margin-left: 20px;*/
+    /*background: rgba(187, 191, 202, 0.5);*/
 
 }
 .menu {
@@ -223,4 +225,12 @@
 .menuactive li:hover a {
     /*font-size: 1.5em;*/
     box-shadow: 0 0 0 2px #71C08D, 0 0 0 6px #fff;
+}
+.AboutText{
+    width: 500px;
+    background: red;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
 }
