@@ -9,12 +9,27 @@ import { ReadOutlined } from "@ant-design/icons";
 import ReactPaginate from "react-paginate";
 import ArrowRight from "../public/arrowRight.svg";
 import renderHTML from "react-render-html";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 const Posts = ({ filterCategory, setFilterCategory }) => {
   const { documents: Posts } = useCollection("posts");
+
   useEffect(() => {
     setFilterCategory(Posts);
   }, [Posts]);
+
+  const ReadCount = async (idx) => {
+    let index = await Posts.findIndex((item) => item.id === idx);
+    let selectedReadCount = Posts[index].readCount;
+
+    const ref = doc(db, "posts", idx);
+    setTimeout(async () => {
+      await updateDoc(ref, {
+        readCount: selectedReadCount + 1,
+      });
+    }, 2000);
+  };
 
   const [pageNumber, setPageNumber] = useState(0);
 
@@ -46,13 +61,15 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
 
               <Text style={{ color: "#989DA2" }}>
                 <ReadOutlined style={{ color: "#FF5959" }} />
-                &nbsp; 1 okunma &nbsp; - &nbsp;
+                &nbsp; {post.readCount}
+                &nbsp; - &nbsp;
               </Text>
               <Text style={{ color: "#989DA2" }}>{post.date}</Text>
 
               <br />
               <Text style={{ color: "#989DA2" }}>
-                {post.category[0]} - {post.category[1]}
+                {post.category[0]}{" "}
+                {post.category[1] ? ` - ${post.category[1]}` : null}
               </Text>
               <Paragraph
                 style={{ width: "550px", marginTop: "10px" }}
@@ -70,7 +87,10 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 }}
                 href={`/posts/${post.id}`}
               >
-                <Button className={styles.button}>
+                <Button
+                  className={styles.button}
+                  onClick={() => ReadCount(post.id)}
+                >
                   <Text className={styles.buttonText}>Read More</Text>
                   <ArrowRight />
                 </Button>
