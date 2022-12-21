@@ -34,7 +34,7 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
   const categoryCount = async () => {
     if (Posts !== null) {
       let a = [];
-      for (let i = 0; i < Posts.length; i++) {
+      for (let i = 0; i < Posts?.length; i++) {
         a = [...a, ...Posts[i].category.flat()];
       }
       let c = [];

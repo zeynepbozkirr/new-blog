@@ -1,24 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Hammersmith+One&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Hammersmith+One&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Satisfy&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Diplomata+SC&family=Hammersmith+One&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Passions+Conflict&family=Satisfy&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Diplomata+SC&family=Hammersmith+One&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Passions+Conflict&family=Satisfy&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=Yellowtail&display=swap');
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family:'Caveat','Diplomata SC', cursive,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
-  /*color: white;*/
-  /*background: rgb(57,62,70);*/
-  /*background: linear-gradient(120deg, rgba(57,62,70,1) 12%, rgba(48,71,94,1) 100%);*/
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-
 }
 
 * {
@@ -46,7 +36,6 @@ a {
 }
 
 
-
 .paginationBttns {
   width: 80%;
   height: 40px;
@@ -59,7 +48,6 @@ a {
   padding: 10px;
   margin: 8px;
   border-radius: 5px;
-  /*color: #2b2eff;*/
   cursor: pointer;
 }
 
@@ -76,12 +64,6 @@ a {
 
 
 .Navbar{
-  /*font-family: 'Diplomata SC', cursive;*/
-  /*font-family: 'Hammersmith One', sans-serif;*/
-  /*font-family: 'Kdam Thmor Pro', sans-serif;*/
-  /*font-family: 'Noto Sans Chakma', sans-serif;*/
-  /*font-family: 'Source Sans Pro', sans-serif;*/
-  /*font-family: 'Yellowtail', cursive;*/
   display: flex;
   align-items: center;
   height: 100%;
@@ -103,7 +85,7 @@ a {
 .AboutName{
   font-size: 16px;
   display: flex;
-  justify-content: end;
+  /*justify-content: end;*/
 
 }
 @media(max-width:768px){

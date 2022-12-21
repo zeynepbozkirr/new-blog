@@ -50,7 +50,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
             <div style={{ marginTop: "50px", width: "600px" }}>
               <Title
                 style={{ width: "500px" }}
-                length="2"
+                // length="2"
                 ellipsis={{
                   rows: 1,
                   expandable: false,
