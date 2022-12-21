@@ -15,6 +15,7 @@ const SearchInput = ({ searchHandleChange, setSearchData, searchData }) => {
         onClick={() => {
           setSearchActive(!searchActive);
           setValue("");
+          setSearchData("");
         }}
       >
         <Search />
