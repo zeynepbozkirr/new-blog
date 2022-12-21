@@ -9,7 +9,7 @@ import { useCollection } from "../../Hooks/useCollection";
 import Link from "next/link";
 import styles from "../../components/components.module.css";
 
-const { Paragraph, Title, Text } = Typography;
+const { Title, Text } = Typography;
 
 const PostDetail = ({ props }) => {
   const { documents: AllPosts } = useCollection("posts");
@@ -38,17 +38,12 @@ const PostDetail = ({ props }) => {
               <Title>{posts.title}</Title>
             </Col>
             <Col>{renderHTML(posts.postContent)}</Col>
-            <Col style={{ textAlign: "end", marginTop: "30px" }}>
-              <Text style={{ color: "#FF5959", fontWeight: "bold" }}>
-                Bekir Yetim
-              </Text>{" "}
-              <br />
-            </Col>
+            <br /> <br />
             <Col>
               <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
-                Eklenme Tarihi :{" "}
+                Eklenme Tarihi :
               </Text>
-              <Text style={{ color: "#FF5959" }}>{posts.date}</Text>
+              <Text style={{ color: "#FF5959" }}> {posts.date}</Text>
             </Col>
             <Col>
               <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
@@ -62,7 +57,7 @@ const PostDetail = ({ props }) => {
               </Text>
 
               {posts.category.map((item) => {
-                return <Text style={{ color: "#FF5959" }}>{item} </Text>;
+                return <Text style={{ color: "#FF5959" }}> {item} </Text>;
               })}
             </Col>
           </Col>
@@ -71,7 +66,6 @@ const PostDetail = ({ props }) => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                // marginTop: "50px",
                 height: "400px",
                 alignItems: "center",
                 justifyContent: "center",
@@ -118,7 +112,7 @@ const PostDetail = ({ props }) => {
               height="80"
               width="80"
               radius="9"
-              color="#9E7676"
+              color="#FF5959"
               ariaLabel="three-dots-loading"
               wrapperStyle={{}}
               wrapperClassName=""

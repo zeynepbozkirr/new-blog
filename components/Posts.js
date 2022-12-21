@@ -33,7 +33,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const usersPerPage = 3;
+  const usersPerPage = 5;
   const pagesVisited = pageNumber * usersPerPage;
 
   const pageCount = Math.ceil(Posts?.length / usersPerPage);
