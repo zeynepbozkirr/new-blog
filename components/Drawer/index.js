@@ -25,6 +25,7 @@ const DrawerComp = ({ filterCategory, setFilterCategory }) => {
       }}
     >
       <SearchInput
+        searchData={searchData}
         setSearchData={(x) => setSearchData(x)}
         searchHandleChange={(e) => searchHandleChange(e)}
       ></SearchInput>
