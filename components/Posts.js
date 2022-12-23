@@ -59,16 +59,18 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 {post.title}
               </Title>
 
-              <Text style={{ color: "#989DA2" }}>
+              <Text>
                 <ReadOutlined style={{ color: "#FF5959" }} />
-                &nbsp; {post.readCount}
-                &nbsp; - &nbsp;
+                <Text style={{ color: "#989DA2" }}>
+                  &nbsp; {post.readCount}
+                  &nbsp; - &nbsp;
+                </Text>
               </Text>
               <Text style={{ color: "#989DA2" }}>{post.date}</Text>
 
               <br />
               <Text style={{ color: "#989DA2" }}>
-                {post.category[0]}{" "}
+                {post.category[0]}
                 {post.category[1] ? ` - ${post.category[1]}` : null}
               </Text>
               <Paragraph
@@ -78,7 +80,8 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                   expandable: false,
                 }}
               >
-                {renderHTML(post.postContent)}
+                {post.postContent}
+                {/*{renderHTML(post.postContent)}*/}
               </Paragraph>
               <Link
                 style={{
