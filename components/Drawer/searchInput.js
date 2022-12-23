@@ -6,7 +6,7 @@ const SearchInput = ({ searchHandleChange, setSearchData, searchData }) => {
   const [searchActive, setSearchActive] = useState(true);
   const [valuee, setValue] = useState();
 
-  console.log(searchData, "data", valuee);
+  // console.log(searchData, "data", valuee);
 
   return (
     <div className={searchActive ? style.searchBox : style.searchBoxActive}>

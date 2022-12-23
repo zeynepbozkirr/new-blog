@@ -33,7 +33,13 @@ const PostDetail = ({ props }) => {
     <>
       {posts ? (
         <Row justify="center">
-          <Col md={14} xs={14} offset={1} style={{ marginTop: "50px" }}>
+          <Col
+            key={posts.id}
+            md={14}
+            xs={14}
+            offset={1}
+            style={{ marginTop: "50px" }}
+          >
             <Col>
               <Title>{posts.title}</Title>
             </Col>
@@ -56,8 +62,13 @@ const PostDetail = ({ props }) => {
                 Category :
               </Text>
 
-              {posts.category.map((item) => {
-                return <Text style={{ color: "#FF5959" }}> {item} </Text>;
+              {posts.category.map((item, index) => {
+                return (
+                  <Text key={index} style={{ color: "#FF5959" }}>
+                    {" "}
+                    {item}{" "}
+                  </Text>
+                );
               })}
             </Col>
           </Col>
@@ -71,10 +82,10 @@ const PostDetail = ({ props }) => {
                 justifyContent: "center",
               }}
             >
-              {AllPosts.map((item) => {
+              {AllPosts.map((item, index) => {
                 return (
                   item.title !== posts.title && (
-                    <Link href={`/posts/${item.id}`}>
+                    <Link key={index} href={`/posts/${item.id}`}>
                       <Button
                         style={{
                           display: "flex",
@@ -85,10 +96,12 @@ const PostDetail = ({ props }) => {
                         className={styles.button}
                       >
                         <Text
-                          ellipsis={{
-                            rows: 1,
-                            // expandable: false,
-                          }}
+                          ellipsis={
+                            {
+                              // rows: 1,
+                              // expandable: false,
+                            }
+                          }
                           style={{
                             color: "black",
                             fontWeight: "400",

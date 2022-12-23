@@ -72,8 +72,8 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
         {searchData !== "" ? (
           <div>
             {searchData?.map((search, i) => (
-              <Col>
-                <Link key={search.id} href={`/posts/${search.id}`}>
+              <Col key={i}>
+                <Link href={`/posts/${search.id}`}>
                   <Bounce top>
                     <Paragraph
                       ellipsis={{
@@ -99,21 +99,25 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
                     rows: 1,
                     expandable: false,
                   }}
-                  key={pos.id}
+                  key={index}
                 >
                   <Button
                     className={styles.categoryButton}
                     onClick={() => onClickCategory(pos)}
                   >
                     <Text
-                      ellipsis={{
-                        rows: 1,
-                        // expandable: false,
-                      }}
+                      ellipsis={
+                        {
+                          // rows: 1,
+                          // expandable: false,
+                        }
+                      }
                     >
                       {pos}
                     </Text>
-                    <Text>({repeatData.filter((x) => x === pos).length})</Text>
+                    <Text>
+                      ({repeatData.filter((x) => x === pos).length})5555 55555
+                    </Text>
                   </Button>
                 </Paragraph>
               ))}
