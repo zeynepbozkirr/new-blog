@@ -47,7 +47,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
       return (
         <Row key={post.id}>
           <Col>
-            <div style={{ marginTop: "50px", width: "600px" }}>
+            <div style={{ marginTop: "50px", width: "100%" }}>
               <Title
                 style={{ width: "500px" }}
                 // length="2"
@@ -80,8 +80,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                   expandable: false,
                 }}
               >
-                {post.postContent}
-                {/*{renderHTML(post.postContent)}*/}
+                {renderHTML(post.postContent)}
               </Paragraph>
               <Link
                 style={{
