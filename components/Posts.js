@@ -49,12 +49,10 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
           <Row className={styles.post}>
             <Col xs={24} sm={24} md={18} lg={18}>
               <Title
-                ellipsis={
-                  {
-                    // rows: 1,
-                    // expandable: false,
-                  }
-                }
+                ellipsis={{
+                  rows: 1,
+                  // expandable: false,
+                }}
                 style={{ fontSize: 28, width: "90%" }}
               >
                 {post.title}
@@ -78,12 +76,10 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
               </Text>
 
               <Paragraph
-                style={{
-                  marginTop: "10px",
-                }}
+                className={styles.paragraph}
                 ellipsis={{
                   rows: 4,
-                  expandable: false,
+                  // expandable: false,
                 }}
               >
                 {renderHTML(post.postContent)}

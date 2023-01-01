@@ -8,6 +8,17 @@
     justify-content: center;
 }
 
+.paragraph{
+    margin-top: 10px;
+}
+@media (prefers-color-scheme: dark) {
+    .paragraph {
+        color-scheme: dark;
+        color: white;
+        background: black;
+
+    }
+}
 .button{
     background-color: #FF5959;
     border-color: #FF5959;
