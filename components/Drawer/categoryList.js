@@ -3,7 +3,7 @@ import { Button, Card, Col, Row, Typography } from "antd";
 import Link from "next/link";
 import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
-import styles from "../components.module.css";
+import styles from "./drawer.module.css";
 import lodash from "lodash";
 import { ThreeDots } from "react-loader-spinner";
 

@@ -45,60 +45,59 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     ?.slice(pagesVisited, pagesVisited + usersPerPage)
     .map((post) => {
       return (
-        <Row key={post.id}>
-          <Col>
-            <div style={{ marginTop: "50px", width: "100%" }}>
-              <Title
-                style={{ width: "500px" }}
-                // length="2"
-                ellipsis={{
-                  rows: 1,
-                  expandable: false,
-                }}
-              >
-                {post.title}
-              </Title>
+        <Row className={styles.post}>
+          <Col xs={24} sm={24} md={18} lg={18}>
+            <Title
+              ellipsis={
+                {
+                  // rows: 1,
+                  // expandable: false,
+                }
+              }
+              style={{ fontSize: 28, width: "90%" }}
+            >
+              {post.title}
+            </Title>
 
-              <Text>
-                <ReadOutlined style={{ color: "#FF5959" }} />
-                <Text style={{ color: "#989DA2" }}>
-                  &nbsp; {post.readCount}
-                  &nbsp; - &nbsp;
-                </Text>
-              </Text>
-              <Text style={{ color: "#989DA2" }}>{post.date}</Text>
-
-              <br />
+            <Text>
+              <ReadOutlined style={{ color: "#FF5959" }} />
               <Text style={{ color: "#989DA2" }}>
-                {post.category[0]}
-                {post.category[1] ? ` - ${post.category[1]}` : null}
+                &nbsp; {post.readCount}
+                &nbsp; - &nbsp;
               </Text>
-              <Paragraph
-                style={{ width: "550px", marginTop: "10px" }}
-                ellipsis={{
-                  rows: 4,
-                  expandable: false,
-                }}
+            </Text>
+
+            <Text style={{ color: "#989DA2" }}>
+              {post.date} <br />
+            </Text>
+
+            <Text style={{ color: "#989DA2" }}>
+              {post.category[0]}
+              {post.category[1] ? ` - ${post.category[1]}` : null}
+            </Text>
+
+            <Paragraph
+              style={{
+                marginTop: "10px",
+              }}
+              ellipsis={{
+                rows: 4,
+                expandable: false,
+              }}
+            >
+              {renderHTML(post.postContent)}
+            </Paragraph>
+
+            <Link href={`/posts/${post.id}`}>
+              <Button
+                className={styles.button}
+                onClick={() => ReadCount(post.id)}
               >
-                {renderHTML(post.postContent)}
-              </Paragraph>
-              <Link
-                style={{
-                  display: "flex",
-                  color: "#9E7676",
-                }}
-                href={`/posts/${post.id}`}
-              >
-                <Button
-                  className={styles.button}
-                  onClick={() => ReadCount(post.id)}
-                >
-                  <Text className={styles.buttonText}>Read More</Text>
-                  <ArrowRight />
-                </Button>
-              </Link>
-              <hr />
-            </div>
+                <Text className={styles.buttonText}>Read More</Text>
+                <ArrowRight />
+              </Button>
+            </Link>
+            <hr />
           </Col>
         </Row>
       );

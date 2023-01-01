@@ -64,19 +64,7 @@ a {
 ;
 }
 
-.Navbar{
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding-left: 30px;
-  font-size: 20px;
-  font-weight: 500;
-  /*position: relative;*/
 
-}
-.Navbar:hover{
-  color: #FF5959 !important;
-}
 .About{
   color: white;
 

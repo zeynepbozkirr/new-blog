@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Input } from "antd";
-import style from "./../components.module.css";
+import styles from "./drawer.module.css";
 import Search from "../../public/search.svg";
+
 const SearchInput = ({ searchHandleChange, setSearchData, searchData }) => {
   const [searchActive, setSearchActive] = useState(true);
   const [valuee, setValue] = useState();
 
-  // console.log(searchData, "data", valuee);
-
   return (
-    <div className={searchActive ? style.searchBox : style.searchBoxActive}>
+    <div className={searchActive ? styles.searchBox : styles.searchBoxActive}>
       <div
-        className={style.search}
+        className={styles.search}
         onClick={() => {
           setSearchActive(!searchActive);
           setValue("");
@@ -20,7 +19,7 @@ const SearchInput = ({ searchHandleChange, setSearchData, searchData }) => {
       >
         <Search />
       </div>
-      <div className={style.searchInput}>
+      <div className={styles.searchInput}>
         <Input
           placeholder="Search"
           bordered={false}

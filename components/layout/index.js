@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./navbar";
+import { Col, Row } from "antd";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Navbar />
       <main>{children}</main>
-    </div>
+    </>
   );
 };
 

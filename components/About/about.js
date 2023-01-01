@@ -1,45 +1,24 @@
 import React from "react";
 import { Card, Typography } from "antd";
 import { TypeAnimation } from "react-type-animation";
-
+import styles from "./about.module.css";
 const { Text } = Typography;
 
 const AboutMe = () => {
   return (
-    <div style={{ height: "450px" }}>
+    <div className={styles.about}>
       <Card
-        style={{
-          backgroundColor: "transparent",
-          borderWidth: 0,
-          // width: "100%",
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
+        className={styles.card}
         cover={
           <div>
             <img
-              style={{ width: "150px", borderRadius: "50%" }}
+              className={styles.image}
+              style={{ borderRadius: "50%" }}
               alt="example"
               src="/about/bekir.jpeg"
             />
-            <div
-              style={{
-                display: "flex",
-                paddingLeft: "80px",
-                width: "400px",
-              }}
-            >
-              <Text
-                style={{
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: 27,
-                }}
-              >
-                I`m &nbsp;
-              </Text>
+            <div className={styles.title}>
+              <Text className={styles.titleText}>I`m &nbsp;</Text>
               <TypeAnimation
                 sequence={[
                   "Bekir Yetim",
@@ -51,14 +30,7 @@ const AboutMe = () => {
                 ]}
                 cursor={false}
                 speed={50}
-                style={{
-                  height: "40px",
-                  display: "flex",
-                  justifyContent: "center",
-                  fontWeight: "bold",
-                  fontSize: 27,
-                  color: "#FED049",
-                }}
+                className={styles.titleTypeAnimation}
                 wrapper="div"
                 repeat={Infinity}
               />
@@ -79,13 +51,7 @@ const AboutMe = () => {
           ]}
           cursor={false}
           speed={80}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            color: "white",
-            width: "400px",
-          }}
+          className={styles.content}
           wrapper="div"
         />
       </Card>

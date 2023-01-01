@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../components.module.css";
+import styles from "./about.module.css";
 import Mail from "../../public/contact/mail.svg";
 import Medium from "../../public/contact/medium.svg";
 import Stackoverflow from "../../public/contact/stackoverflow.svg";
