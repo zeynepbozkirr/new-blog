@@ -45,61 +45,63 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     ?.slice(pagesVisited, pagesVisited + usersPerPage)
     .map((post) => {
       return (
-        <Row className={styles.post}>
-          <Col xs={24} sm={24} md={18} lg={18}>
-            <Title
-              ellipsis={
-                {
-                  // rows: 1,
-                  // expandable: false,
+        <>
+          <Row className={styles.post}>
+            <Col xs={24} sm={24} md={18} lg={18}>
+              <Title
+                ellipsis={
+                  {
+                    // rows: 1,
+                    // expandable: false,
+                  }
                 }
-              }
-              style={{ fontSize: 28, width: "90%" }}
-            >
-              {post.title}
-            </Title>
-
-            <Text>
-              <ReadOutlined style={{ color: "#FF5959" }} />
-              <Text style={{ color: "#989DA2" }}>
-                &nbsp; {post.readCount}
-                &nbsp; - &nbsp;
-              </Text>
-            </Text>
-
-            <Text style={{ color: "#989DA2" }}>
-              {post.date} <br />
-            </Text>
-
-            <Text style={{ color: "#989DA2" }}>
-              {post.category[0]}
-              {post.category[1] ? ` - ${post.category[1]}` : null}
-            </Text>
-
-            <Paragraph
-              style={{
-                marginTop: "10px",
-              }}
-              ellipsis={{
-                rows: 4,
-                expandable: false,
-              }}
-            >
-              {renderHTML(post.postContent)}
-            </Paragraph>
-
-            <Link href={`/posts/${post.id}`}>
-              <Button
-                className={styles.button}
-                onClick={() => ReadCount(post.id)}
+                style={{ fontSize: 28, width: "90%" }}
               >
-                <Text className={styles.buttonText}>Read More</Text>
-                <ArrowRight />
-              </Button>
-            </Link>
-            <hr />
-          </Col>
-        </Row>
+                {post.title}
+              </Title>
+
+              <Text>
+                <ReadOutlined style={{ color: "#FF5959" }} />
+                <Text style={{ color: "#989DA2" }}>
+                  &nbsp; {post.readCount}
+                  &nbsp; - &nbsp;
+                </Text>
+              </Text>
+
+              <Text style={{ color: "#989DA2" }}>
+                {post.date} <br />
+              </Text>
+
+              <Text style={{ color: "#989DA2" }}>
+                {post.category[0]}
+                {post.category[1] ? ` - ${post.category[1]}` : null}
+              </Text>
+
+              <Paragraph
+                style={{
+                  marginTop: "10px",
+                }}
+                ellipsis={{
+                  rows: 4,
+                  expandable: false,
+                }}
+              >
+                {renderHTML(post.postContent)}
+              </Paragraph>
+
+              <Link href={`/posts/${post.id}`}>
+                <Button
+                  className={styles.button}
+                  onClick={() => ReadCount(post.id)}
+                >
+                  <Text className={styles.buttonText}>Read More</Text>
+                  <ArrowRight />
+                </Button>
+              </Link>
+              <hr />
+            </Col>
+          </Row>
+        </>
       );
     });
 
