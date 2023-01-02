@@ -1,5 +1,4 @@
 .navbar{
-
     background: #E2E3E4;
     height: 55px;
     width: 100%;
@@ -8,7 +7,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-    padding-left: 30px;
     font-size: 20px;
     font-weight: 500;
 

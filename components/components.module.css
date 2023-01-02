@@ -7,18 +7,26 @@
     flex-direction: row;
     justify-content: center;
 }
+.title{
+    fontSize: 28px;
+    width: 90%
+}
 
 .paragraph{
     margin-top: 10px;
 }
+
 @media (prefers-color-scheme: dark) {
     .paragraph {
         color-scheme: dark;
         color: white;
         background: black;
-
+    }
+    .title{
+        color: white;
     }
 }
+
 .button{
     background-color: #FF5959;
     border-color: #FF5959;

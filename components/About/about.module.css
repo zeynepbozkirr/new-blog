@@ -9,21 +9,23 @@
  flex-direction: column;
  align-items: center;
 }
+
 .image{
  width: 150px;
 }
+
 .title{
  display: flex;
- padding-left:80px;
- width: 400px
+ height: 60px;
 }
+
 .titleText{
  color:white;
  font-weight: bold;
- font-size: 27px;
+ font-size: 26px;
 }
+
 .titleTypeAnimation{
- height: 40px;
  display: flex;
  justify-content: center;
  font-weight: bold;
@@ -33,11 +35,23 @@
 
 .content{
  display: flex;
- justify-content: center;
- text-align: center;
  color: white;
- width: 400px;
+ width: 100%;
 }
+
+@media (max-width: 481px) {
+ .titleText{
+  font-size: 16px;
+ }
+ .titleTypeAnimation{
+  font-size: 16px;
+ }
+ .content{
+  font-size: 12px;
+ }
+
+}
+
 
 .contact{
  display: flex;

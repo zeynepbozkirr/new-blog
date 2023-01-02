@@ -19,7 +19,7 @@ export default function Home() {
               setFilterCategory={(x) => setFilterCategory(x)}
             />
           </Col>
-          <Col md={6} xs={24} offset={2}>
+          <Col md={6} xs={22} offset={2}>
             <Drawer
               filterCategory={filterCategory}
               setFilterCategory={(x) => setFilterCategory(x)}

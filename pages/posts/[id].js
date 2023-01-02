@@ -35,9 +35,11 @@ const PostDetail = ({ props }) => {
         <Row justify="center">
           <Col
             key={posts.id}
-            md={14}
-            xs={14}
-            offset={1}
+            xs={24}
+            sm={24}
+            md={16}
+            lg={16}
+            // offset={1}
             style={{ marginTop: "50px" }}
           >
             <Col>
@@ -72,7 +74,7 @@ const PostDetail = ({ props }) => {
               })}
             </Col>
           </Col>
-          <Col md={6} xs={24} offset={2}>
+          <Col xs={23} sm={23} md={4} lg={4} offset={1}>
             <div
               style={{
                 display: "flex",
@@ -137,9 +139,9 @@ const PostDetail = ({ props }) => {
     </>
   );
 };
-export async function getServerSideProps(context) {
-  const { query } = context;
-  return { props: { query } };
-}
+// export async function getServerSideProps(context) {
+//   const { query } = context;
+//   return { props: { query } };
+// }
 
 export default PostDetail;
