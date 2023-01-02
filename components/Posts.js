@@ -75,15 +75,8 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                 {post.category[1] ? ` - ${post.category[1]}` : null}
               </Text>
 
-              <Text
-                // suffixCount={2}
-                className={styles.paragraph}
-                // ellipsis={{
-                //   rows: 4,
-                //   expandable: false,
-                // }}
-              >
-                {renderHTML(post.postContent.substring(0, 150))}
+              <Text className={styles.paragraph}>
+                {renderHTML(post.postContent.substring(0, 150).concat("..."))}
               </Text>
 
               <Link href={`/posts/${post.id}`}>
