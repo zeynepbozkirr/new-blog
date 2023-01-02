@@ -1,0 +1,63 @@
+.title{
+    color: red !important ;
+}
+
+@media (prefers-color-scheme: dark) {
+    .title{
+        color: white !important ;
+    }
+}
+
+.date{
+    color: #989DA2;
+    font-weight: bold
+}
+.dateItem{
+    color: #FF5959
+}
+.readCount{
+    color: #989DA2;
+    font-weight: bold
+}
+
+.readCountItem{
+    color: #FF5959
+}
+.category{
+    color: #989DA2;
+    font-weight: bold
+}
+.categoryItem{
+    color: #FF5959
+}
+
+.otherPostTitle{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+
+}
+.button{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size: 14px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #E2E3E4;
+    border: none;
+    width:  220px
+}
+.buttonText {
+    color: black;
+    font-weight: 400;
+}
+
+.buttonText:hover{
+    color: #FF5959 !important;
+    border-color: #e0e0e0 !important;
+
+}

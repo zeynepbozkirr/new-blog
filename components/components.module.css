@@ -18,9 +18,9 @@
 
 @media (prefers-color-scheme: dark) {
     .paragraph {
-        color-scheme: dark;
-        color: white;
-        background: black;
+        color-scheme: dark !important ;;
+        color: white !important ;;
+        background: black !important ;;
     }
     .title{
         color: white !important ;

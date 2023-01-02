@@ -7,7 +7,7 @@ import { ThreeDots } from "react-loader-spinner";
 import renderHTML from "react-render-html";
 import { useCollection } from "../../Hooks/useCollection";
 import Link from "next/link";
-import styles from "../../components/components.module.css";
+import styles from "../../styles/postDetail.module.css";
 
 const { Title, Text } = Typography;
 
@@ -35,83 +35,46 @@ const PostDetail = ({ props }) => {
         <Row justify="center">
           <Col
             key={posts.id}
-            xs={24}
-            sm={24}
-            md={16}
-            lg={16}
-            // offset={1}
+            xs={23}
+            sm={23}
+            md={15}
+            lg={15}
+            offset={1}
             style={{ marginTop: "50px" }}
           >
             <Col>
-              <Title>{posts.title}</Title>
+              <Title classNme={styles.title}>{posts.title}</Title>
             </Col>
             <Col>{renderHTML(posts.postContent)}</Col>
             <br /> <br />
             <Col>
-              <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
-                Eklenme Tarihi :
-              </Text>
-              <Text style={{ color: "#FF5959" }}> {posts.date}</Text>
+              <Text className={styles.date}>Eklenme Tarihi :</Text>
+              <Text className={styles.dateItem}>{posts.date}</Text>
             </Col>
             <Col>
-              <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
-                Okunma Sayısı :
-              </Text>
-              <Text style={{ color: "#FF5959" }}> {posts.readCount}</Text>
+              <Text className={styles.readCount}>Okunma Sayısı :</Text>
+              <Text className={styles.readCountItem}>{posts.readCount}</Text>
             </Col>
             <Col>
-              <Text style={{ color: "#989DA2", fontWeight: "bold" }}>
-                Category :
-              </Text>
+              <Text className={styles.category}>Category :</Text>
 
               {posts.category.map((item, index) => {
                 return (
-                  <Text key={index} style={{ color: "#FF5959" }}>
-                    {" "}
-                    {item}{" "}
+                  <Text key={index} className={styles.categoryItem}>
+                    {item}, &nbsp;
                   </Text>
                 );
               })}
             </Col>
           </Col>
-          <Col xs={23} sm={23} md={4} lg={4} offset={1}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "400px",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+          <Col xs={22} sm={22} md={4} lg={4} offset={2}>
+            <div className={styles.otherPostTitle}>
               {AllPosts.map((item, index) => {
                 return (
                   item.title !== posts.title && (
                     <Link key={index} href={`/posts/${item.id}`}>
-                      <Button
-                        style={{
-                          display: "flex",
-                          background: "#E2E3E4",
-                          border: "none",
-                          width: " 220px",
-                        }}
-                        className={styles.button}
-                      >
-                        <Text
-                          ellipsis={
-                            {
-                              // rows: 1,
-                              // expandable: false,
-                            }
-                          }
-                          style={{
-                            color: "black",
-                            fontWeight: "400",
-                          }}
-                          className={styles.buttonText}
-                        >
-                          {item.title}
-                        </Text>
+                      <Button className={styles.button}>
+                        <Text className={styles.buttonText}>{item.title}</Text>
                       </Button>
                     </Link>
                   )
@@ -139,9 +102,9 @@ const PostDetail = ({ props }) => {
     </>
   );
 };
-// export async function getServerSideProps(context) {
-//   const { query } = context;
-//   return { props: { query } };
-// }
+export async function getServerSideProps(context) {
+  const { query } = context;
+  return { props: { query } };
+}
 
 export default PostDetail;
