@@ -53,7 +53,8 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
                   rows: 1,
                   // expandable: false,
                 }}
-                classNmae={styles.title}
+                className={styles.title}
+                // style={{ color: "red" }}
               >
                 {post.title}
               </Title>

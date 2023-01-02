@@ -14,3 +14,10 @@
 .navbarList:hover{
     color: #FF5959 !important;
 }
+
+@media (prefers-color-scheme: dark) {
+    .navbarList {
+        color: black !important;
+    }
+
+}

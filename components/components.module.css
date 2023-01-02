@@ -9,7 +9,7 @@
 }
 .title{
     fontSize: 28px;
-    width: 90%
+    width: 90%;
 }
 
 .paragraph{
@@ -23,7 +23,7 @@
         background: black;
     }
     .title{
-        color: white;
+        color: white !important ;
     }
 }
 
