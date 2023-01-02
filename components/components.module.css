@@ -8,12 +8,14 @@
     justify-content: center;
 }
 .title{
-    fontSize: 28px;
+    /*font-size: 35px !important;*/
     width: 90%;
 }
 
 .paragraph{
     margin-top: 10px;
+    font-size: 18px;
+
 }
 
 @media (prefers-color-scheme: dark) {

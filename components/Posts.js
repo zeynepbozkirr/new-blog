@@ -9,7 +9,14 @@ import { ReadOutlined } from "@ant-design/icons";
 import ReactPaginate from "react-paginate";
 import ArrowRight from "../public/arrowRight.svg";
 import renderHTML from "react-render-html";
-import { doc, updateDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const Posts = ({ filterCategory, setFilterCategory }) => {
@@ -51,10 +58,8 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
               <Title
                 ellipsis={{
                   rows: 1,
-                  // expandable: false,
                 }}
                 className={styles.title}
-                // style={{ color: "red" }}
               >
                 {post.title}
               </Title>
