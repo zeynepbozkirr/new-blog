@@ -116,7 +116,9 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
                     >
                       {pos}
                     </Text>
-                    <Text>({repeatData.filter((x) => x === pos).length})</Text>
+                    <Text className={styles.categoryText}>
+                      ({repeatData.filter((x) => x === pos).length})
+                    </Text>
                   </Button>
                 </Paragraph>
               ))}

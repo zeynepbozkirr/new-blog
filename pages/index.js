@@ -4,8 +4,11 @@ import Posts from "../components/Posts";
 import { useCollection } from "../Hooks/useCollection";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
+import useWindowSize from "../Hooks/useWindowSize";
 
 export default function Home() {
+  const { width, height } = useWindowSize();
+
   const { documents: AllPosts } = useCollection("posts");
   const [filterCategory, setFilterCategory] = useState();
 
@@ -27,20 +30,25 @@ export default function Home() {
           </Col>
         </Row>
       ) : (
-        <Row justify="center">
-          <Col>
-            <ThreeDots
-              height="80"
-              width="80"
-              radius="9"
-              color="#FF5959"
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{}}
-              wrapperClassName=""
-              visible={true}
-            />
-          </Col>
-        </Row>
+        <Col
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "400px",
+          }}
+        >
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#FF5959"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
+        </Col>
       )}
     </div>
   );

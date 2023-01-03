@@ -8,13 +8,16 @@ import renderHTML from "react-render-html";
 import { useCollection } from "../../Hooks/useCollection";
 import Link from "next/link";
 import styles from "../../styles/postDetail.module.css";
+import useWindowSize from "../../Hooks/useWindowSize";
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
-const PostDetail = ({ props }) => {
+const PostDetail = () => {
+  const { width, height } = useWindowSize();
+
   const [loading, setLoading] = useState(true);
   const { documents: AllPosts } = useCollection("posts");
-  const { Paragraph, Text } = Typography;
+  const { Text } = Typography;
 
   const [posts, setPosts] = useState(null);
   const router = useRouter();
@@ -38,20 +41,25 @@ const PostDetail = ({ props }) => {
   }, [id]);
 
   return loading ? (
-    <Row justify="center">
-      <Col>
-        <ThreeDots
-          height="80"
-          width="80"
-          radius="9"
-          color="#FF5959"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName=""
-          visible={true}
-        />
-      </Col>
-    </Row>
+    <Col
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: height,
+      }}
+    >
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="#FF5959"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+      />
+    </Col>
   ) : (
     <>
       <Row justify="center">

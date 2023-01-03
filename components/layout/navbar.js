@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Col, Row } from "antd";
 import Link from "next/link";
 import styles from "./layout.module.css";
-import useWindowSize from "../../Hooks/useWindowSize";
 
 const Navbar = () => {
-  const { width, height } = useWindowSize();
-
   return (
     <Row className={styles.navbar}>
       <Col lg={11} md={11} sm={11} xs={11} offset={1}>

@@ -2,12 +2,9 @@ import React from "react";
 import { Card, Col, Row, Typography } from "antd";
 import { TypeAnimation } from "react-type-animation";
 import styles from "./about.module.css";
-import useWindowSize from "../../Hooks/useWindowSize";
 const { Text } = Typography;
 
 const AboutMe = () => {
-  const { width, height } = useWindowSize();
-
   return (
     <div className={styles.about}>
       <Col>
