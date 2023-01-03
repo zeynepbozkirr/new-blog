@@ -11,7 +11,7 @@ const Navbar = () => {
           <text className={styles.navbarList}>Bekir Yetim</text>
         </Link>
       </Col>
-      <Col lg={6} md={6} sm={6} xs={6} o offset={6}>
+      <Col lg={6} md={6} sm={6} xs={6} offset={6}>
         <Link href="/About">
           <text className={styles.navbarList}>About </text>
         </Link>

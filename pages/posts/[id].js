@@ -29,9 +29,6 @@ const PostDetail = () => {
     const docSnap = await getDoc(docRef);
     const docData = docSnap.data();
     setPosts(docData);
-    if (docData) {
-      return true;
-    }
   };
 
   useEffect(() => {
