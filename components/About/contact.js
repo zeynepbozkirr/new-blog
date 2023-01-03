@@ -22,12 +22,9 @@ const ContactMe = () => {
 
   return (
     <div className={styles.contact}>
-      <div
-        className={openToggle ? styles.menu : styles.menuactive}
-        onClick={() => onclick()}
-      >
+      <div className={openToggle ? styles.menu : styles.menuactive}>
         <div className={styles.toggle} onClick={() => onclick()}>
-          <Share />
+          <Share onClick={() => onclick()} />
         </div>
         <li
           style={{
@@ -54,7 +51,7 @@ const ContactMe = () => {
           }}
         >
           <a
-            href="#"
+            href="https://twitter.com/bekirytm?s=11&t=xlg4VXOWjZG_S9BE8PevPQ"
             style={{
               transform: "rotate(calc(360deg/-6 *1))",
               color: "#1877f2",

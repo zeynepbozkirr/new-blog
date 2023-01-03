@@ -70,7 +70,7 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
     <div>
       <Row>
         {searchData !== "" ? (
-          <div>
+          <Col>
             {searchData?.map((search, i) => (
               <Col key={i}>
                 <Link href={`/posts/${search.id}`}>
@@ -89,9 +89,9 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
                 </Link>
               </Col>
             ))}
-          </div>
+          </Col>
         ) : (
-          <div>
+          <Col>
             <Fade left>
               {allArr?.map((pos, index) => (
                 <Paragraph
@@ -106,6 +106,7 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
                     onClick={() => onClickCategory(pos)}
                   >
                     <Text
+                      className={styles.categoryText}
                       ellipsis={
                         {
                           // rows: 1,
@@ -120,7 +121,7 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
                 </Paragraph>
               ))}
             </Fade>
-          </div>
+          </Col>
         )}
       </Row>
     </div>

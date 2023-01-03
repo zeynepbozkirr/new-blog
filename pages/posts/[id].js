@@ -14,6 +14,7 @@ const { Title, Text } = Typography;
 const PostDetail = ({ props }) => {
   const [loading, setLoading] = useState(true);
   const { documents: AllPosts } = useCollection("posts");
+  const { Paragraph, Text } = Typography;
 
   const [posts, setPosts] = useState(null);
   const router = useRouter();
@@ -69,15 +70,15 @@ const PostDetail = ({ props }) => {
           <Col>{renderHTML(posts.postContent)}</Col>
           <br /> <br />
           <Col>
-            <Text className={styles.date}>Eklenme Tarihi :</Text>
-            <Text className={styles.dateItem}>{posts.date}</Text>
+            <Text className={styles.date}>Eklenme Tarihi : </Text>
+            <Text className={styles.dateItem}>{posts.date} </Text>
           </Col>
           <Col>
-            <Text className={styles.readCount}>Okunma Sayısı :</Text>
+            <Text className={styles.readCount}>Okunma Sayısı : </Text>
             <Text className={styles.readCountItem}>{posts.readCount}</Text>
           </Col>
           <Col>
-            <Text className={styles.category}>Category :</Text>
+            <Text className={styles.category}>Category : </Text>
 
             {posts.category.map((item, index) => {
               return (
@@ -95,7 +96,9 @@ const PostDetail = ({ props }) => {
                 item.title !== posts.title && (
                   <Link key={index} href={`/posts/${item.id}`}>
                     <Button className={styles.button}>
-                      <Text className={styles.buttonText}>{item.title}</Text>
+                      <Text ellipsis={{}} className={styles.buttonText}>
+                        {item.title}
+                      </Text>
                     </Button>
                   </Link>
                 )
@@ -107,11 +110,5 @@ const PostDetail = ({ props }) => {
     </>
   );
 };
-
-// export async function getServerSideProps(context) {
-//   console.log(context, "CON");
-//   const id = context.params.id;
-//   return { props: { id: id } };
-// }
 
 export default PostDetail;

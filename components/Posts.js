@@ -52,52 +52,69 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     ?.slice(pagesVisited, pagesVisited + usersPerPage)
     .map((post) => {
       return (
-        <>
-          <Row className={styles.post}>
-            <Col xs={24} sm={24} md={18} lg={18}>
-              <Title
-                ellipsis={{
-                  rows: 1,
-                }}
-                className={styles.title}
+        <Row
+          className={styles.post}
+          style={{
+            width: "100%",
+          }}
+        >
+          <Col
+            xs={22}
+            sm={22}
+            md={14}
+            lg={14}
+            offset={2}
+            style={
+              {
+                // display: "flex",
+                // justifyContent: "center",
+                // height"100%",
+                // border: "solid 1px orange",
+              }
+            }
+          >
+            <Title
+              ellipsis={{
+                rows: 1,
+              }}
+              className={styles.title}
+            >
+              {post.title}
+            </Title>
+
+            <Text>
+              <ReadOutlined style={{ color: "#FF5959" }} />
+              <Text style={{ color: "#989DA2" }}>
+                &nbsp; {post.readCount}
+                &nbsp; - &nbsp;
+              </Text>
+            </Text>
+
+            <Text style={{ color: "#989DA2" }}>
+              {post.date} <br />
+            </Text>
+
+            <Text style={{ color: "#989DA2" }}>
+              {post.category[0]}
+              {post.category[1] ? ` - ${post.category[1]}` : null}
+            </Text>
+
+            <Text className={styles.paragraph}>
+              {renderHTML(post.postContent.substring(0, 150).concat("..."))}
+            </Text>
+
+            <Link href={`/posts/${post.id}`}>
+              <Button
+                className={styles.button}
+                onClick={() => ReadCount(post.id)}
               >
-                {post.title}
-              </Title>
-
-              <Text>
-                <ReadOutlined style={{ color: "#FF5959" }} />
-                <Text style={{ color: "#989DA2" }}>
-                  &nbsp; {post.readCount}
-                  &nbsp; - &nbsp;
-                </Text>
-              </Text>
-
-              <Text style={{ color: "#989DA2" }}>
-                {post.date} <br />
-              </Text>
-
-              <Text style={{ color: "#989DA2" }}>
-                {post.category[0]}
-                {post.category[1] ? ` - ${post.category[1]}` : null}
-              </Text>
-
-              <Text className={styles.paragraph}>
-                {renderHTML(post.postContent.substring(0, 150).concat("..."))}
-              </Text>
-
-              <Link href={`/posts/${post.id}`}>
-                <Button
-                  className={styles.button}
-                  onClick={() => ReadCount(post.id)}
-                >
-                  <Text className={styles.buttonText}>Read More</Text>
-                  <ArrowRight />
-                </Button>
-              </Link>
-              <hr />
-            </Col>
-          </Row>
-        </>
+                <Text className={styles.buttonText}>Read More</Text>
+                <ArrowRight />
+              </Button>
+            </Link>
+            <hr />
+          </Col>
+        </Row>
       );
     });
 

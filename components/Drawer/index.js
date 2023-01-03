@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchInput from "./searchInput";
 import { useCollection } from "../../Hooks/useCollection";
 import CategoryList from "./categoryList";
+import { Col, Row } from "antd";
 
 const DrawerComp = ({ filterCategory, setFilterCategory }) => {
   const { documents: Posts } = useCollection("posts");
@@ -19,25 +20,30 @@ const DrawerComp = ({ filterCategory, setFilterCategory }) => {
   };
 
   return (
-    <div
+    <Row
       style={{
         marginTop: "50px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      <SearchInput
-        searchData={searchData}
-        setSearchData={(x) => setSearchData(x)}
-        searchHandleChange={(e) => searchHandleChange(e)}
-      ></SearchInput>
-
-      <CategoryList
-        filterCategory={filterCategory}
-        setFilterCategory={(x) => setFilterCategory(x)}
-        Posts={Posts}
-        searchData={searchData}
-        setSearchData={(x) => setSearchData(x)}
-      ></CategoryList>
-    </div>
+      <Col>
+        <SearchInput
+          searchData={searchData}
+          setSearchData={(x) => setSearchData(x)}
+          searchHandleChange={(e) => searchHandleChange(e)}
+        ></SearchInput>
+      </Col>
+      <Col>
+        <CategoryList
+          filterCategory={filterCategory}
+          setFilterCategory={(x) => setFilterCategory(x)}
+          Posts={Posts}
+          searchData={searchData}
+          setSearchData={(x) => setSearchData(x)}
+        ></CategoryList>
+      </Col>
+    </Row>
   );
 };
 

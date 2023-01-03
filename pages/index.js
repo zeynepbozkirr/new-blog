@@ -13,13 +13,13 @@ export default function Home() {
     <div className="App">
       {AllPosts ? (
         <Row>
-          <Col md={15} xs={24}>
+          <Col xs={24} sm={24} md={16} lg={16}>
             <Posts
               filterCategory={filterCategory}
               setFilterCategory={(x) => setFilterCategory(x)}
             />
           </Col>
-          <Col md={6} xs={22} offset={2}>
+          <Col xs={22} sm={22} md={5} lg={5} offset={1}>
             <Drawer
               filterCategory={filterCategory}
               setFilterCategory={(x) => setFilterCategory(x)}

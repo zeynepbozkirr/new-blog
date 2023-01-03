@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Diplomata+SC&family=Hammersmith+One&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Nunito:wght@200;900&family=Passions+Conflict&family=Satisfy&family=Sevillana&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=The+Nautigal&family=Yellowtail&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family:"Times New Roman", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family:'Nunito', BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 

@@ -1,5 +1,5 @@
 .title{
-    color: red !important ;
+    /*color: red !important ;*/
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,7 +46,7 @@
     height: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
     background: #E2E3E4;
     border: none;
     width:  220px
