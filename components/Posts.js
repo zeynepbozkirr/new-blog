@@ -50,9 +50,10 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
   };
   const displayUsers = filterCategory
     ?.slice(pagesVisited, pagesVisited + usersPerPage)
-    .map((post) => {
+    .map((post, index) => {
       return (
         <Row
+          key={index}
           className={styles.post}
           style={{
             width: "100%",
