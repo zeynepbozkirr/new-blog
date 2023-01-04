@@ -4,7 +4,6 @@ import { db } from "../../firebase/config";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ThreeDots } from "react-loader-spinner";
-import renderHTML from "react-render-html";
 import { useCollection } from "../../Hooks/useCollection";
 import Link from "next/link";
 import styles from "../../styles/postDetail.module.css";
@@ -13,7 +12,9 @@ import useWindowSize from "../../Hooks/useWindowSize";
 const { Title } = Typography;
 
 const PostDetail = () => {
-  const { width, height } = useWindowSize();
+  const parse = require("html-react-parser");
+
+  const { height } = useWindowSize();
 
   const [loading, setLoading] = useState(true);
   const { documents: AllPosts } = useCollection("posts");
@@ -72,7 +73,7 @@ const PostDetail = () => {
           <Col>
             <Title className={styles.title}>{posts.title}</Title>
           </Col>
-          <Col>{renderHTML(posts.postContent)}</Col>
+          <Col>{parse(posts.postContent)}</Col>
           <br /> <br />
           <Col>
             <Text className={styles.date}>Eklenme Tarihi : </Text>

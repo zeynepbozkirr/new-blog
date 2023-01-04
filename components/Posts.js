@@ -3,23 +3,17 @@ import { Button, Card, Col, Row } from "antd";
 import { useCollection } from "../Hooks/useCollection";
 import Link from "next/link";
 import { Typography } from "antd";
-const { Paragraph, Text, Title } = Typography;
+const { Text, Title } = Typography;
 import styles from "./components.module.css";
 import { ReadOutlined } from "@ant-design/icons";
 import ReactPaginate from "react-paginate";
 import ArrowRight from "../public/arrowRight.svg";
-import renderHTML from "react-render-html";
-import {
-  collection,
-  doc,
-  onSnapshot,
-  orderBy,
-  query,
-  updateDoc,
-} from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const Posts = ({ filterCategory, setFilterCategory }) => {
+  const parse = require("html-react-parser");
+
   const { documents: Posts } = useCollection("posts");
 
   useEffect(() => {
@@ -59,21 +53,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
             width: "100%",
           }}
         >
-          <Col
-            xs={22}
-            sm={22}
-            md={14}
-            lg={14}
-            offset={2}
-            style={
-              {
-                // display: "flex",
-                // justifyContent: "center",
-                // height"100%",
-                // border: "solid 1px orange",
-              }
-            }
-          >
+          <Col xs={22} sm={22} md={14} lg={14} offset={2}>
             <Title
               ellipsis={{
                 rows: 1,
@@ -101,7 +81,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
             </Text>
 
             <Text className={styles.paragraph}>
-              {renderHTML(post.postContent.substring(0, 150).concat("..."))}
+              {parse(post.postContent.substring(0, 150).concat("..."))}
             </Text>
 
             <Link href={`/posts/${post.id}`}>
