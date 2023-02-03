@@ -1,79 +1,26 @@
-.categoryButton{
-    border: 1px solid  white;
-    background-color: #E2E3E4;
-    border-radius: 10px;
+.searchText{
     width: 100%;
-    height: 37px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+    font-family: Nunito;
+    background-color: transparent;
+    overflow: hidden;
 }
-.categoryButton:hover{
-    color: white !important;
-    background-color: #FF5959 !important;
-    border-color:  #FF5959 !important;
 
+.categoryButton{
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    background: transparent;
+    border:none;
+    margin-bottom: 10px;
 }
 .categoryText {
-    padding-left: 12px;
+    width: 40%;
     font-family: Nunito;
+    background-color: transparent;
+    overflow: hidden;
 }
 
 .searchBox {
-    box-shadow: 1px 1px 16px 3px rgba(92,90,90,0.26);
-    -webkit-box-shadow: 1px 1px 16px 3px rgba(92,90,90,0.26);
-    -moz-box-shadow: 1px 1px 16px 3px rgba(92,90,90,0.26);
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    transition: 0.5s;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: #fff;
-}
-
-.searchBoxActive{
-    box-shadow: 1px 1px 16px 3px rgba(92,90,90,0.26);
-    -webkit-box-shadow: 1px 1px 16px 3px rgba(92,90,90,0.26);
-    -moz-box-shadow: 1px 1px 16px 3px rgba(92,90,90,0.26);
-    position: relative;
-    height: 40px;
-    display: flex;
-    transition: 0.5s;
-    overflow: hidden;
-    width: 100%;
-    margin-bottom: 30px;
-    background: #fff;
-}
-
-.search{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    width: 40px;
-}
-.searchInput{
-    position: absolute;
-    left: 40px;
-    width: 100%;
-    height: 100%;
-    line-height: 60px;
-    border: none !important;
-    outline: none !important;
-}
-.searchBoxActive .searchInput{
-    left: 30px;
-}
-
-.searchInput input{
-    position: absolute;
-    width: 80%;
-    height: 100%;
-    border: none !important;
-    outline: none !important;
-    font-size: 1.25em;
+    box-shadow: 1px 1px 16px 3px rgba(90, 90, 90, 0.09)
 }

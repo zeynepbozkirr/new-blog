@@ -59,7 +59,7 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
         height="80"
         width="80"
         radius="9"
-        color="#FF5959"
+        color="gray"
         ariaLabel="three-dots-loading"
         wrapperStyle={{}}
         wrapperClassName=""
@@ -67,66 +67,52 @@ const CategoryList = ({ searchData, Posts, setFilterCategory }) => {
       />
     </Row>
   ) : (
-    <div>
-      <Row>
-        {searchData !== "" ? (
-          <Col>
-            {searchData?.map((search, i) => (
-              <Col key={i}>
-                <Link href={`/posts/${search.id}`}>
-                  <Bounce top>
-                    <Paragraph
-                      ellipsis={{
-                        rows: 1,
-                        expandable: false,
-                      }}
-                    >
-                      <Button className={styles.categoryButton}>
-                        {search.title}
-                      </Button>
-                    </Paragraph>
-                  </Bounce>
-                </Link>
-              </Col>
-            ))}
-          </Col>
-        ) : (
-          <Col>
-            <Fade left>
-              {allArr?.map((pos, index) => (
-                <Paragraph
-                  ellipsis={{
-                    rows: 1,
-                    expandable: false,
-                  }}
-                  key={index}
-                >
-                  <Button
-                    className={styles.categoryButton}
-                    onClick={() => onClickCategory(pos)}
-                  >
-                    <Text
-                      className={styles.categoryText}
-                      ellipsis={
-                        {
-                          // rows: 1,
-                          // expandable: false,
-                        }
-                      }
-                    >
-                      {pos}
-                    </Text>
-                    <Text className={styles.categoryText}>
-                      ({repeatData.filter((x) => x === pos).length})
-                    </Text>
+    <Row>
+      {searchData !== "" ? (
+        <>
+          {searchData?.map((search, i) => (
+            <Col key={i} style={{ width: "100%" }}>
+              <Link href={`/posts/${search.id}`}>
+                <Bounce top>
+                  <Button className={styles.categoryButton}>
+                    <Text className={styles.searchText}> {search.title}</Text>
                   </Button>
-                </Paragraph>
-              ))}
-            </Fade>
-          </Col>
-        )}
-      </Row>
-    </div>
+                </Bounce>
+              </Link>
+            </Col>
+          ))}
+        </>
+      ) : (
+        <Col
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+          }}
+        >
+          <Fade left>
+            {allArr?.map((pos, index) => (
+              <>
+                <Button
+                  className={styles.categoryButton}
+                  onClick={() => onClickCategory(pos)}
+                >
+                  <Text className={styles.categoryText}>{pos} </Text>
+                  <Text className={styles.categoryText}>
+                    {/*{`<`}―――{`>`}*/}
+                    ┄┄┄
+                  </Text>
+                  <Text className={styles.categoryText}>
+                    ({repeatData.filter((x) => x === pos).length})
+                  </Text>
+                </Button>
+              </>
+            ))}
+          </Fade>
+        </Col>
+      )}
+    </Row>
   );
 };
 

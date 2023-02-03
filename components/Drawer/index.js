@@ -24,17 +24,18 @@ const DrawerComp = ({ filterCategory, setFilterCategory }) => {
       style={{
         marginTop: "50px",
         display: "flex",
+        alignItems: "center",
         flexDirection: "column",
       }}
     >
-      <Col>
+      <Col style={{ width: "100%", marginBottom: "30px" }}>
         <SearchInput
           searchData={searchData}
           setSearchData={(x) => setSearchData(x)}
           searchHandleChange={(e) => searchHandleChange(e)}
         ></SearchInput>
       </Col>
-      <Col>
+      <Col style={{ width: "100%" }}>
         <CategoryList
           filterCategory={filterCategory}
           setFilterCategory={(x) => setFilterCategory(x)}

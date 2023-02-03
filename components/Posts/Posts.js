@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "antd";
-import { useCollection } from "../Hooks/useCollection";
+import { useCollection } from "../../Hooks/useCollection";
 import Link from "next/link";
 import { Typography } from "antd";
 const { Text, Title } = Typography;
-import styles from "./components.module.css";
-import { ReadOutlined } from "@ant-design/icons";
+import styles from "./post.module.css";
 import ReactPaginate from "react-paginate";
-import ArrowRight from "../public/arrowRight.svg";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { db } from "../../firebase/config";
+import parse from "html-react-parser";
 
 const Posts = ({ filterCategory, setFilterCategory }) => {
   const parse = require("html-react-parser");
@@ -34,7 +33,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const usersPerPage = 5;
+  const usersPerPage = 3;
   const pagesVisited = pageNumber * usersPerPage;
 
   const pageCount = Math.ceil(Posts?.length / usersPerPage);
@@ -46,66 +45,42 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
     ?.slice(pagesVisited, pagesVisited + usersPerPage)
     .map((post, index) => {
       return (
-        <Row
+        <Col
           key={index}
-          className={styles.post}
-          style={{
-            width: "100%",
-          }}
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          className={styles.container}
         >
-          <Col xs={22} sm={22} md={14} lg={14} offset={2}>
-            <Title
-              ellipsis={{
-                rows: 1,
-              }}
-              className={styles.title}
-            >
-              {post.title}
-            </Title>
-
-            <Text>
-              <ReadOutlined style={{ color: "#FF5959" }} />
-              <Text style={{ color: "#989DA2" }}>
-                &nbsp; {post.readCount}
-                &nbsp; - &nbsp;
+          <Col className={styles.colDate}>
+            <Col style={{ width: "100%" }}>
+              <Text className={styles.date}>
+                {post.date} - {post.category[0]}
+                {post.category[1] ? ` - ${post.category[1]}` : null}
               </Text>
-            </Text>
-
-            <Text style={{ color: "#989DA2" }}>
-              {post.date} <br />
-            </Text>
-
-            <Text style={{ color: "#989DA2" }}>
-              {post.category[0]}
-              {post.category[1] ? ` - ${post.category[1]}` : null}
-            </Text>
-
-            <Text className={styles.paragraph}>
-              {parse(post.postContent.substring(0, 150).concat("..."))}
-            </Text>
-
-            <Link href={`/posts/${post.id}`}>
-              <Button
-                className={styles.button}
+              <Link
+                href={`/posts/${post.id}`}
                 onClick={() => ReadCount(post.id)}
               >
-                <Text className={styles.buttonText}>Read More</Text>
-                <ArrowRight />
-              </Button>
-            </Link>
-            <hr />
+                <h5 className={styles.title}> {post.title}</h5>
+              </Link>
+              <Col className={styles.descCol}>
+                <Text className={styles.desc}>
+                  {parse(post.postContent.substring(0, 150).concat("..."))}
+                </Text>
+              </Col>
+            </Col>
           </Col>
-        </Row>
+        </Col>
       );
     });
 
   return (
     <Row>
-      <div className="App">
-        {displayUsers}
+      <Col className="App">{displayUsers}</Col>
+      <Col className={styles.pageNumberCol}>
         <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
+          previousLabel={"<"}
+          nextLabel={">"}
           pageCount={pageCount}
           onPageChange={changePage}
           containerClassName={"paginationBttns"}
@@ -114,7 +89,7 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
         />
-      </div>
+      </Col>
     </Row>
   );
 };

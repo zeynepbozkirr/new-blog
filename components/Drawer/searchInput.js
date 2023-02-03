@@ -8,29 +8,16 @@ const SearchInput = ({ searchHandleChange, setSearchData, searchData }) => {
   const [valuee, setValue] = useState();
 
   return (
-    <div className={searchActive ? styles.searchBox : styles.searchBoxActive}>
-      <div
-        className={styles.search}
-        onClick={() => {
-          setSearchActive(!searchActive);
-          setValue("");
-          setSearchData("");
-        }}
-      >
-        <Search />
-      </div>
-      <div className={styles.searchInput}>
-        <Input
-          placeholder="Search"
-          bordered={false}
-          value={searchActive ? "" : valuee}
-          onChange={(e) => {
-            setValue(e.target.value);
-            searchHandleChange(e.target.value);
-          }}
-        ></Input>
-      </div>
-    </div>
+    <Input
+      className={styles.searchBox}
+      placeholder="Search"
+      bordered={false}
+      // value={searchActive ? "" : valuee}
+      onChange={(e) => {
+        setValue(e.target.value);
+        searchHandleChange(e.target.value);
+      }}
+    ></Input>
   );
 };
 

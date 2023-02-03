@@ -10,7 +10,29 @@
   flex-direction: column;
 
 }
+.home{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
 
+}
+.pageNumberCol{
+  margin-top: 50px;
+  position: fixed;
+  left: 0;
+  z-index: 999;
+  
 
+}
+.drawerCol{
+  border-left: 2px solid #E1D7C6
+}
+@media(max-width:767px){
+  .drawerCol{
+    border-left: none;
+  }
+}
 
 

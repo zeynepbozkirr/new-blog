@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Hammersmith+One&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Nunito:wght@400;900&family=Open+Sans:wght@300;400&family=Passions+Conflict&family=Qwitcher+Grypen&family=Raleway:wght@400;500;600;700;900&family=Satisfy&family=Sevillana&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=The+Nautigal&family=Yellowtail&display=swap');
+
+.container{
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: solid 1px rgba(25, 27, 29, 0.2509803922);
+}
+.colDate{
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date{
+    color: #757677;
+    font-size: 13px;
+    font-family: "Raleway", sans-serif;
+}
+
+.title{
+    font-family: "Raleway", sans-serif;
+    color: #191b1d;
+    overflow-wrap: break-word;
+    line-height: 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    margin: 0;
+    text-transform: uppercase;
+
+}
+
+.descCol{
+    display: flex;
+    justify-content: start;
+    /*background: orange;*/
+    width:100%;
+
+}
+
+.desc{
+    color: #757677;
+    font-family: "Raleway", sans-serif;
+    font-size: 13px !important;
+    white-space: nowrap;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.moreButtonCol{
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column
+
+}
+.moreButton{
+    color: black;
+    font-weight: 500;
+    border: none;
+    background:#F4F9F4 ;
+    box-shadow: none;
+}
+.moreButton:hover{
+    color: black !important;
+}
+.pageNumberCol{
+    background-color: transparent;
+    position: fixed;
+    left:0;
+    top:250px;
+    /*transform: rotate(90deg);*/
+
+}
