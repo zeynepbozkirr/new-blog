@@ -6,9 +6,9 @@ import styles from "./layout.module.css";
 const Navbar = () => {
   return (
     <Row className={styles.navbar}>
-      <Col offset={1}>
-        <Link href="/">
-          <text className={styles.navbarList}>Bekir Yetim</text>
+      <Col className={styles.navbarList}>
+        <Link href="/" className={styles.navbarLink}>
+          Bekir Yetim
         </Link>
       </Col>
     </Row>

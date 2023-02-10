@@ -79,8 +79,6 @@ const Posts = ({ filterCategory, setFilterCategory }) => {
       <Col className="App">{displayUsers}</Col>
       <Col className={styles.pageNumberCol}>
         <ReactPaginate
-          previousLabel={"<"}
-          nextLabel={">"}
           pageCount={pageCount}
           onPageChange={changePage}
           containerClassName={"paginationBttns"}

@@ -1,18 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Hammersmith+One&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Noto+Sans+Chakma&family=Nunito:wght@400;900&family=Passions+Conflict&family=Qwitcher+Grypen&family=Satisfy&family=Sevillana&family=Source+Sans+Pro:ital,wght@1,600;1,900&family=The+Nautigal&family=Yellowtail&display=swap');
+
 .navbar{
-    background: #E2E3E4;
-    height: 55px;
+    color: black;
     width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eaeaea;
+    top: 0;
+
 }
+
 .navbarList{
     display: flex;
     align-items: center;
     height: 100%;
-    font-size: 20px;
-    font-weight: 500;
-
+    font-family: 'Qwitcher Grypen' !important;
+    font-size: 4rem !important;
 }
-.navbarList:hover{
-    color: #FF5959 !important;
+
+.navbarLink:hover{
+    color: black !important;
 }
 
 @media (prefers-color-scheme: dark) {
